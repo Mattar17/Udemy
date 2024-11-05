@@ -1,0 +1,17 @@
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Repository.deps.json
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Repository.dll
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Repository.pdb
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Domain.dll
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Domain.pdb
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.csproj.AssemblyReference.cache
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.AssemblyInfoInputs.cache
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.AssemblyInfo.cs
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.csproj.CoreCompileInputs.cache
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Re.8081DD7C.Up2Date
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.dll
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\refint\Udemy.Repository.dll
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.pdb
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\ref\Udemy.Repository.dll
+D:\Projects\UdemyClone\Udemy.Repository\bin\Debug\net8.0\Udemy.Repository.runtimeconfig.json
+D:\Projects\UdemyClone\Udemy.Repository\obj\Debug\net8.0\Udemy.Repository.genruntimeconfig.cache
