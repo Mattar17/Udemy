@@ -1,0 +1,15 @@
+D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Services.deps.json
+D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Services.dll
+D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Services.pdb
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.AssemblyInfoInputs.cache
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.AssemblyInfo.cs
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.csproj.CoreCompileInputs.cache
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.dll
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\refint\Udemy.Services.dll
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.pdb
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\ref\Udemy.Services.dll
+D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Domain.dll
+D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Domain.pdb
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.csproj.AssemblyReference.cache
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Se.B1C96DDE.Up2Date
