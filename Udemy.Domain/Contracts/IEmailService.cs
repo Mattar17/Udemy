@@ -9,6 +9,6 @@ namespace Udemy.Domain.Contracts
 {
     public interface IEmailService
     {
-        public void SendEmailAsync(Email email);
+        public Task SendEmailAsync(Email email);
     }
 }

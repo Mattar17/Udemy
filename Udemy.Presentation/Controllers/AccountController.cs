@@ -66,9 +66,9 @@ namespace Udemy.Presentation.Controllers
         }
 
         [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest request)
+        public async Task<IActionResult> ForgotPassword(string Email)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
+            var user = await _userManager.FindByEmailAsync(Email);
 
             if (user is null)
                 return BadRequest();
@@ -77,19 +77,19 @@ namespace Udemy.Presentation.Controllers
             {
                 var email = new Email()
                 {
-                    To = request.Email ,
+                    To = Email ,
                     Subject = "Reset Password Link"
                 };
                 var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var resetLink = Url.Action("ResetPassword" , "Account" , new { Email = request.Email , Token = resetToken},Request.Scheme);
-                email.Body = resetLink;
-                _emailService.SendEmailAsync(email);
-                return Ok($"Reset Link was sent to {request.Email}");
+                //var resetLink = Url.Action("ResetPassword" , "Account" , new { Email = request.Email , Token = resetToken},Request.Scheme);
+                email.Body = resetToken;
+                await _emailService.SendEmailAsync(email);
+                return Ok($"Reset Link was sent to {Email}");
             }
         }
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
+        public async Task<IActionResult> ResetPassword(ResetPasswordDTO request)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -97,10 +97,11 @@ namespace Udemy.Presentation.Controllers
 
             if (user is null ) return BadRequest();
 
-            var Result = await _userManager.ResetPasswordAsync(user , request.ResetCode , request.NewPassword);
+            var Result = await _userManager.ResetPasswordAsync(user , request.Token , request.NewPassword);
 
-            if(!Result.Succeeded)
+            if(!Result.Succeeded || request.ConfirmPassword != request.NewPassword)
                 return BadRequest("Reset Password Failed!");
+
 
             return Ok("Password Reseted Successfully");
         }

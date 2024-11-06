@@ -16,7 +16,7 @@ namespace Udemy.Presentation.Helpers
         {
             _options = options.Value;
         }
-        public void SendEmailAsync(Email email)
+        public async Task SendEmailAsync(Email email)
         {
             var mail = new MimeMessage()
             {
@@ -35,8 +35,8 @@ namespace Udemy.Presentation.Helpers
             using var smtpClient = new SmtpClient();
             smtpClient.Connect(_options.Host,_options.Port,SecureSocketOptions.StartTls);
             smtpClient.Authenticate(_options.Email , _options.AppPassword);
-            smtpClient.SendAsync(mail);
-            smtpClient.Disconnect(false);
+            await smtpClient.SendAsync(mail);
+            smtpClient.Disconnect(true);
             
         }
     }
