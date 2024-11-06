@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
@@ -13,10 +14,13 @@ namespace Udemy.Presentation.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ITokenService _tokenService;
-        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService)
+        private readonly IEmailService _emailService;
+
+        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService,IEmailService emailService)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _emailService = emailService;
         }
         [HttpPost("Register")]
         public async Task<ActionResult<RegisterDTO>> Register(RegisterDTO model)
@@ -59,6 +63,46 @@ namespace Udemy.Presentation.Controllers
                 Token = await _tokenService.CreateTokenAsync(User , _userManager)
             };
             return Ok(model);
+        }
+
+        [HttpPost("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest request)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+
+            if (user is null)
+                return BadRequest();
+
+            else
+            {
+                var email = new Email()
+                {
+                    To = request.Email ,
+                    Subject = "Reset Password Link"
+                };
+                var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var resetLink = Url.Action("ResetPassword" , "Account" , new { Email = request.Email , Token = resetToken},Request.Scheme);
+                email.Body = resetLink;
+                _emailService.SendEmailAsync(email);
+                return Ok($"Reset Link was sent to {request.Email}");
+            }
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var user = await _userManager.FindByEmailAsync (request.Email);
+
+            if (user is null ) return BadRequest();
+
+            var Result = await _userManager.ResetPasswordAsync(user , request.ResetCode , request.NewPassword);
+
+            if(!Result.Succeeded)
+                return BadRequest("Reset Password Failed!");
+
+            return Ok("Password Reseted Successfully");
         }
     }
 }

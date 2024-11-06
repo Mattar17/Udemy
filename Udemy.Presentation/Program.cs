@@ -26,6 +26,7 @@ namespace Udemy.Presentation
             });
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);
+            builder.Services.EmailServices(builder.Configuration);
             #endregion
             var app = builder.Build();
 
@@ -47,56 +48,56 @@ namespace Udemy.Presentation
             #endregion
 
             #region Roles + Admin Seeding
-            using (var Scope = app.Services.CreateScope())
-            {
-                var RoleManager = Scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            //using (var Scope = app.Services.CreateScope())
+            //{
+            //    var RoleManager = Scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                var Roles = new[] { "Admin" , "Instructor" , "Student" };
+            //    var Roles = new[] { "Admin" , "Instructor" , "Student" };
 
-                foreach (var Role in Roles)
-                {
-                    if (!await RoleManager.RoleExistsAsync(Role))
-                    {
-                        await RoleManager.CreateAsync(new IdentityRole(Role));
-                    }
-                }
-
-
-            }
-
-            using (var Scope = app.Services.CreateScope())
-            {
-                var userManager = Scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-                var Admin = await userManager.FindByEmailAsync("admin@udemy.com");
-
-                if (Admin == null)
-                {
-                    var admin = new ApplicationUser()
-                    {
-                        Email = "admin@udemy.com" ,
-                        UserName = "Admin" ,
-                        DisplayName = "Admin"
-                    };
-
-                    var result = await userManager.CreateAsync(admin , "UdemyAdmin@123");
-
-                    if (result.Succeeded)
-                    {
-                        await userManager.AddToRoleAsync(admin , "Admin");
-                    }
-                }
-
-                else
-                {
-                    if (!await userManager.IsInRoleAsync(Admin , "Admin"))
-                    {
-                        await userManager.AddToRoleAsync(Admin , "Admin");
-                    }
-                }
+            //    foreach (var Role in Roles)
+            //    {
+            //        if (!await RoleManager.RoleExistsAsync(Role))
+            //        {
+            //            await RoleManager.CreateAsync(new IdentityRole(Role));
+            //        }
+            //    }
 
 
-            }
+            //}
+
+            //using (var Scope = app.Services.CreateScope())
+            //{
+            //    var userManager = Scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+            //    var Admin = await userManager.FindByEmailAsync("admin@udemy.com");
+
+            //    if (Admin == null)
+            //    {
+            //        var admin = new ApplicationUser()
+            //        {
+            //            Email = "admin@udemy.com" ,
+            //            UserName = "Admin" ,
+            //            DisplayName = "Admin"
+            //        };
+
+            //        var result = await userManager.CreateAsync(admin , "UdemyAdmin@123");
+
+            //        if (result.Succeeded)
+            //        {
+            //            await userManager.AddToRoleAsync(admin , "Admin");
+            //        }
+            //    }
+
+            //    else
+            //    {
+            //        if (!await userManager.IsInRoleAsync(Admin , "Admin"))
+            //        {
+            //            await userManager.AddToRoleAsync(Admin , "Admin");
+            //        }
+            //    }
+
+
+            //}
             #endregion
 
 

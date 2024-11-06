@@ -13,10 +13,15 @@ namespace Udemy.Presentation.Extensions
     {
         public static IServiceCollection AddJWTAuthenticationSechma(this IServiceCollection Services , IConfiguration configuration)
         {
-            Services.AddIdentity<ApplicationUser , IdentityRole>()
+            Services.AddIdentity<ApplicationUser , IdentityRole>(options =>
+            {
+                options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+            })
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             Services.AddScoped(typeof(ITokenService) , typeof(TokenService));
+
             Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

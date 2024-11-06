@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Udemy.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+955296739eceed5e81a6a30832a412713efa9493")]
 [assembly: System.Reflection.AssemblyProductAttribute("Udemy.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Udemy.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

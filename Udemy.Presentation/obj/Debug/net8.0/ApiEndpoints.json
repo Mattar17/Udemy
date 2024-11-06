@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Udemy.Presentation.Controllers.AccountController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Account/ForgotPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "api/Account/Login",
     "HttpMethod": "POST",
@@ -55,5 +71,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.AccountController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Account/ResetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

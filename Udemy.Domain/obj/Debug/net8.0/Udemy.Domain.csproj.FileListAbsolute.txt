@@ -10,3 +10,4 @@ D:\Projects\UdemyClone\Udemy.Domain\obj\Debug\net8.0\Udemy.Domain.dll
 D:\Projects\UdemyClone\Udemy.Domain\obj\Debug\net8.0\refint\Udemy.Domain.dll
 D:\Projects\UdemyClone\Udemy.Domain\obj\Debug\net8.0\Udemy.Domain.pdb
 D:\Projects\UdemyClone\Udemy.Domain\obj\Debug\net8.0\ref\Udemy.Domain.dll
+D:\Projects\UdemyClone\Udemy.Domain\obj\Debug\net8.0\Udemy.Domain.sourcelink.json

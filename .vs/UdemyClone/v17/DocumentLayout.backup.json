@@ -7,32 +7,32 @@
       "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\extensions\\authservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\extensions\\authservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52212AFA-DB50-4D75-B7E2-9A33CFBB3B82}|Udemy.Services\\Udemy.Services.csproj|d:\\projects\\udemyclone\\udemy.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52212AFA-DB50-4D75-B7E2-9A33CFBB3B82}|Udemy.Services\\Udemy.Services.csproj|solutionrelative:udemy.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\contracts\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\contracts\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\extensions\\emailservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\extensions\\emailservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\extensions\\authservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\extensions\\authservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\helpers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\helpers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\contracts\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\contracts\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "Udemy.Presentation\\appsettings.json",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\appsettings.json",
+              "RelativeToolTip": "Udemy.Presentation\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-06T13:47:23.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthServicesExtension.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
+              "RelativeDocumentMoniker": "Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
+              "RelativeToolTip": "Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:39:16.008Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -52,100 +78,74 @@
               "RelativeDocumentMoniker": "Udemy.Presentation\\Program.cs",
               "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Program.cs*",
               "RelativeToolTip": "Udemy.Presentation\\Program.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAewBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAewGQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:13:45.77Z",
+              "WhenOpened": "2024-11-06T13:37:26.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthServicesExtension.cs",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
-              "RelativeDocumentMoniker": "Udemy.Presentation\\Extensions\\AuthServicesExtension.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\AuthServicesExtension.cs*",
-              "RelativeToolTip": "Udemy.Presentation\\Extensions\\AuthServicesExtension.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA4wBAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:12:45.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegisterDTO.cs",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\DTOs\\RegisterDTO.cs",
-              "RelativeDocumentMoniker": "Udemy.Presentation\\DTOs\\RegisterDTO.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\DTOs\\RegisterDTO.cs",
-              "RelativeToolTip": "Udemy.Presentation\\DTOs\\RegisterDTO.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:09:49.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\DTOs\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "Udemy.Presentation\\DTOs\\LoginDTO.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\DTOs\\LoginDTO.cs",
-              "RelativeToolTip": "Udemy.Presentation\\DTOs\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:08:52.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Udemy.Presentation\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Udemy.Presentation\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowFQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:07:35.629Z",
+              "WhenOpened": "2024-11-06T13:23:53.695Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Udemy.Services\\TokenService.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Services\\TokenService.cs",
-              "RelativeToolTip": "Udemy.Services\\TokenService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAxwC8AAAAFAAAAAAAAAA==",
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Helpers\\EmailService.cs",
+              "RelativeDocumentMoniker": "Udemy.Presentation\\Helpers\\EmailService.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Helpers\\EmailService.cs",
+              "RelativeToolTip": "Udemy.Presentation\\Helpers\\EmailService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwCQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:03:32.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ITokenService.cs",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Contracts\\ITokenService.cs",
-              "RelativeDocumentMoniker": "Udemy.Domain\\Contracts\\ITokenService.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Contracts\\ITokenService.cs",
-              "RelativeToolTip": "Udemy.Domain\\Contracts\\ITokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:02:59.27Z",
+              "WhenOpened": "2024-11-06T12:42:05.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\appsettings.json",
-              "RelativeDocumentMoniker": "Udemy.Presentation\\appsettings.json",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\appsettings.json",
-              "RelativeToolTip": "Udemy.Presentation\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-05T14:59:47.853Z",
+              "Title": "Email.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Email.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\Email.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Email.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\Email.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:35:42.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Contracts\\IEmailService.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Contracts\\IEmailService.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Contracts\\IEmailService.cs",
+              "RelativeToolTip": "Udemy.Domain\\Contracts\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:32:11.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmailServicesExtension.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\EmailServicesExtension.cs",
+              "RelativeDocumentMoniker": "Udemy.Presentation\\Extensions\\EmailServicesExtension.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Extensions\\EmailServicesExtension.cs",
+              "RelativeToolTip": "Udemy.Presentation\\Extensions\\EmailServicesExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:29:11.371Z",
               "EditorCaption": ""
             }
           ]

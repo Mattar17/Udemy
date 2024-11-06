@@ -13,3 +13,4 @@ D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Domain.dll
 D:\Projects\UdemyClone\Udemy.Services\bin\Debug\net8.0\Udemy.Domain.pdb
 D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.csproj.AssemblyReference.cache
 D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Se.B1C96DDE.Up2Date
+D:\Projects\UdemyClone\Udemy.Services\obj\Debug\net8.0\Udemy.Services.sourcelink.json
