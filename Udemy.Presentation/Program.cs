@@ -1,9 +1,12 @@
 
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Presentation.Extensions;
 using Udemy.Repository.Context;
+using Udemy.Repository.Repositories;
 
 namespace Udemy.Presentation
 {
@@ -24,6 +27,9 @@ namespace Udemy.Presentation
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+            builder.Services.AddScoped<ICourseRepository,CourseRepository>();
+            builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);
             builder.Services.EmailServices(builder.Configuration);

@@ -1725,7 +1725,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
-          "Udemy.Domain": "1.0.0"
+          "Udemy.Domain": "1.0.0",
+          "Udemy.Services": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Udemy.Repository.dll": {}
@@ -4643,8 +4644,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "MimeKit >= 4.8.0",
       "Swashbuckle.AspNetCore >= 6.6.2",
-      "Udemy.Repository >= 1.0.0",
-      "Udemy.Services >= 1.0.0"
+      "Udemy.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4677,9 +4677,6 @@
           "projectReferences": {
             "D:\\Projects\\UdemyClone\\Udemy.Repository\\Udemy.Repository.csproj": {
               "projectPath": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Udemy.Repository.csproj"
-            },
-            "D:\\Projects\\UdemyClone\\Udemy.Services\\Udemy.Services.csproj": {
-              "projectPath": "D:\\Projects\\UdemyClone\\Udemy.Services\\Udemy.Services.csproj"
             }
           }
         }

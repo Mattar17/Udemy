@@ -1,4 +1,5 @@
-﻿namespace Udemy.Presentation.Helpers
+﻿
+namespace Udemy.Presentation.Helpers
 {
     public class FileUpload
     {
@@ -10,11 +11,12 @@
             {
                 Directory.CreateDirectory(_baseUploadPath);
             }
+
         }
 
         public static async Task<string> UploadFileAsync(IFormFile file)
         {
-            if (file == null && file.Length == 0)
+            if (file == null || file.Length == 0)
             {
                 return "File cannot be null or empty";
             }

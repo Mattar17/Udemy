@@ -103,5 +103,51 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "GetAllCourses",
+    "RelativePath": "api/Course/Courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Udemy.Domain.Models.Course, Udemy.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "CreateCourse",
+    "RelativePath": "api/Course/CreateCourse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "course",
+        "Type": "Udemy.Presentation.DTOs.CourseDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.CourseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

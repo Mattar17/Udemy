@@ -46,6 +46,7 @@ namespace Udemy.Presentation.Controllers
             await _userManager.AddToRoleAsync(user , model.Role);
             return Ok(model);
         }
+
         [HttpPost("Login")]
         public async Task<ActionResult<LoginDTO>> Login([FromForm] string email, [FromForm] string password)
         {
@@ -112,10 +113,10 @@ namespace Udemy.Presentation.Controllers
         }
 
         [HttpPost("SetProfilePicture")]
-
+        [Authorize]
         public async Task<IActionResult> SetProfilePicture( IFormFile file)
         {
-            if (file == null && file.Length == 0)
+            if (file == null || file.Length == 0)
             {
                 return BadRequest("File is Required");
             }

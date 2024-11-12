@@ -13,8 +13,7 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "MimeKit": "4.8.0",
           "Swashbuckle.AspNetCore": "6.6.2",
-          "Udemy.Repository": "1.0.0",
-          "Udemy.Services": "1.0.0"
+          "Udemy.Repository": "1.0.0"
         },
         "runtime": {
           "Udemy.Presentation.dll": {}
@@ -1046,7 +1045,8 @@
       "Udemy.Repository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
-          "Udemy.Domain": "1.0.0"
+          "Udemy.Domain": "1.0.0",
+          "Udemy.Services": "1.0.0"
         },
         "runtime": {
           "Udemy.Repository.dll": {
