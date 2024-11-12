@@ -23,11 +23,10 @@ namespace Udemy.Services
         public async Task<string> CreateTokenAsync(ApplicationUser User , UserManager<ApplicationUser> userManager)
         {
             var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]));
-            var cred = new SigningCredentials(Key , SecurityAlgorithms.HmacSha256Signature);
+            var cred = new SigningCredentials(Key , SecurityAlgorithms.HmacSha256);
             var AuthClaims = new List<Claim>()
             {
-                new Claim (ClaimTypes.GivenName,User.DisplayName),
-                new Claim (ClaimTypes.Email,User.Email),
+                new Claim (ClaimTypes.NameIdentifier,User.Id),
             };
             var UserRoles = await userManager.GetRolesAsync(User);
 
@@ -39,7 +38,7 @@ namespace Udemy.Services
                 issuer: configuration["JWT:issuer"] ,
                 audience: configuration["JWT:audience"] ,
                 claims: AuthClaims ,
-                expires: DateTime.Now.AddDays(1) ,
+                expires: DateTime.UtcNow.AddDays(1) ,
                 signingCredentials: cred
                 );
 

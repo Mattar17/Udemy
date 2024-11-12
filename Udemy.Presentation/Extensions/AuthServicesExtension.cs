@@ -20,7 +20,7 @@ namespace Udemy.Presentation.Extensions
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            Services.AddScoped(typeof(ITokenService) , typeof(TokenService));
+            Services.AddSingleton(typeof(ITokenService) , typeof(TokenService));
 
             Services.AddAuthentication(options =>
             {
@@ -30,15 +30,9 @@ namespace Udemy.Presentation.Extensions
             {
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateIssuer = true ,
-                    ValidateAudience = true ,
-                    ValidateLifetime = true ,
-                    ValidateIssuerSigningKey = true ,
-                    ValidIssuer = configuration["JWT:issuer"] ,
-                    ValidAudience = configuration["JWT:audience"] ,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"])) ,
-                    LifetimeValidator = (before , expires , token , parameters) =>
-                     expires != null && expires > DateTime.UtcNow.AddDays(double.Parse(configuration["JWT:Duration"]))
+                    ValidateIssuer = false ,
+                    ValidateAudience = false ,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]))
                 };
             });
             return Services;

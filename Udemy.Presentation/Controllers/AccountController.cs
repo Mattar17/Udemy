@@ -47,23 +47,23 @@ namespace Udemy.Presentation.Controllers
             return Ok(model);
         }
         [HttpPost("Login")]
-        public async Task<ActionResult<LoginDTO>> Login(LoginRequestDTO requestModel)
+        public async Task<ActionResult<LoginDTO>> Login([FromForm] string email, [FromForm] string password)
         {
-            var User = await _userManager.FindByEmailAsync(requestModel.Email);
+            var User = await _userManager.FindByEmailAsync(email);
+
             if (User is null)
                 return NotFound();
 
-
-            var Result = await _userManager.CheckPasswordAsync(User , requestModel.Password);
+            var Result = await _userManager.CheckPasswordAsync(User , password);
             if (!Result)
                 return BadRequest("Wrong Email or Password");
 
             var model = new LoginDTO()
             {
-                Email = requestModel.Email ,
+                Email = email ,
                 DisplayName = User.DisplayName ,
-                Role = await _userManager.GetRolesAsync(User) ,
-                Token = await _tokenService.CreateTokenAsync(User , _userManager)
+                Token = await _tokenService.CreateTokenAsync(User , _userManager),
+                PictureUrl = User.PricureUrl??"empty"
             };
             return Ok(model);
         }

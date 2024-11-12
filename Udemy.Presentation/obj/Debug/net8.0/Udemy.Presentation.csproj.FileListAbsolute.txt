@@ -157,3 +157,4 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\BouncyCastle.Cryptogr
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MailKit.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MimeKit.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Presentation.staticwebassets.runtime.json
+D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\AutoMapper.dll

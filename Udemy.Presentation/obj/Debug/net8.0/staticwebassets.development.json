@@ -1,1 +1,1 @@
-{"ContentRoots":["D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\"],"Root":{"Children":null,"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\"],"Root":{"Children":{"uploads":{"Children":{"9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

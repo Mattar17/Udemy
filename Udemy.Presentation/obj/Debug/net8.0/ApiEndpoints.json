@@ -24,9 +24,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestModel",
-        "Type": "Udemy.Presentation.DTOs.LoginRequestDTO",
-        "IsRequired": true
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
