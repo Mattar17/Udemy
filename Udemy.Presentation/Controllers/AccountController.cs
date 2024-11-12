@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Presentation.DTOs;
+using Udemy.Presentation.Helpers;
 
 namespace Udemy.Presentation.Controllers
 {
@@ -16,7 +19,7 @@ namespace Udemy.Presentation.Controllers
         private readonly ITokenService _tokenService;
         private readonly IEmailService _emailService;
 
-        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService,IEmailService emailService)
+        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService , IEmailService emailService)
         {
             _userManager = userManager;
             _tokenService = tokenService;
@@ -44,20 +47,20 @@ namespace Udemy.Presentation.Controllers
             return Ok(model);
         }
         [HttpPost("Login")]
-        public async Task<ActionResult<LoginDTO>> Login(string email , string password)
+        public async Task<ActionResult<LoginDTO>> Login(LoginRequestDTO requestModel)
         {
-            var User = await _userManager.FindByEmailAsync(email);
+            var User = await _userManager.FindByEmailAsync(requestModel.Email);
             if (User is null)
                 return NotFound();
 
 
-            var Result = await _userManager.CheckPasswordAsync(User , password);
+            var Result = await _userManager.CheckPasswordAsync(User , requestModel.Password);
             if (!Result)
                 return BadRequest("Wrong Email or Password");
 
             var model = new LoginDTO()
             {
-                Email = email ,
+                Email = requestModel.Email ,
                 DisplayName = User.DisplayName ,
                 Role = await _userManager.GetRolesAsync(User) ,
                 Token = await _tokenService.CreateTokenAsync(User , _userManager)
@@ -91,19 +94,53 @@ namespace Udemy.Presentation.Controllers
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDTO request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-            var user = await _userManager.FindByEmailAsync (request.Email);
+            var user = await _userManager.FindByEmailAsync(request.Email);
 
-            if (user is null ) return BadRequest();
+            if (user is null)
+                return BadRequest();
 
             var Result = await _userManager.ResetPasswordAsync(user , request.Token , request.NewPassword);
 
-            if(!Result.Succeeded || request.ConfirmPassword != request.NewPassword)
+            if (!Result.Succeeded || request.ConfirmPassword != request.NewPassword)
                 return BadRequest("Reset Password Failed!");
 
 
             return Ok("Password Reseted Successfully");
         }
+
+        [HttpPost("SetProfilePicture")]
+
+        public async Task<IActionResult> SetProfilePicture( IFormFile file)
+        {
+            if (file == null && file.Length == 0)
+            {
+                return BadRequest("File is Required");
+            }
+
+            var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (UserId == null)
+                return Unauthorized();
+
+            var user = await _userManager.FindByIdAsync(UserId);
+            var PictureURL = await FileUpload.UploadFileAsync(file);
+
+            if (user is null)
+            {
+                return Unauthorized("User not found");
+            }
+
+            user.PricureUrl = PictureURL;
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+                return BadRequest("Picture Upload failed");
+
+            return Ok(user.PricureUrl);
+        }
+
     }
 }

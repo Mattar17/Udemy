@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Udemy.Services\Udemy.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
 </Project>

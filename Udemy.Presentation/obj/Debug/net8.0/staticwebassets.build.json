@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "f7JPxmXjUI7YmHRoEJ5QvkHbz043lO+eWgxRFhlrrxU=",
+  "Hash": "dzANauqhCvS1e2qjI31+5fblWeodpvYGlQBKWi6sl64=",
   "Source": "Udemy.Presentation",
   "BasePath": "_content/Udemy.Presentation",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Udemy.Presentation\\wwwroot",
+      "Source": "Udemy.Presentation",
+      "ContentRoot": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\",
+      "BasePath": "_content/Udemy.Presentation",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

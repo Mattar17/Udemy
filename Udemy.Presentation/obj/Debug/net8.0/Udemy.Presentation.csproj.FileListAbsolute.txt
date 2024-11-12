@@ -156,3 +156,4 @@ D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\Udemy.Presentation.so
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MailKit.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MimeKit.dll
+D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Presentation.staticwebassets.runtime.json
