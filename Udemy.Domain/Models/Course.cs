@@ -20,7 +20,7 @@ namespace Udemy.Domain.Models
         public decimal Price { get; set; }
         public bool IsApproved { get; set; }
         public DateTime CreationDate { get; set; }
-        public CourseLevel Level { get; set; }
+        public string Level { get; set; }
         public int CategoryId { get; set; }
         public CourseCategory Category { get; set; }
         public ICollection<CourseReview>? CourseReviews { get; set; }

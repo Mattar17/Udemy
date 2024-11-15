@@ -10,7 +10,6 @@ namespace Udemy.Domain.Models
     {
         public int Id { get; set; }
         public string Category { get; set; }
-        public ICollection<Course>? Courses { get; set; }
-
+        public ICollection<Course>? courses { get; set; }  = new HashSet<Course>();
     }
 }

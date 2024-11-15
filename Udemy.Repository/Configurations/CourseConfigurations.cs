@@ -14,7 +14,7 @@ namespace Udemy.Repository.Configurations
         public void Configure(EntityTypeBuilder<Course> builder)
         {
             builder.HasOne(c => c.Category)
-                .WithMany(cat => cat.Courses)
+                .WithMany(cat => cat.courses)
                 .HasForeignKey(c => c.CategoryId);
 
             builder.Property(c => c.Level)

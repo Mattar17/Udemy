@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Udemy.Domain.Contracts;
+using Udemy.Domain.Models;
 using Udemy.Repository.Context;
 
 namespace Udemy.Repository.Repositories
@@ -25,7 +26,14 @@ namespace Udemy.Repository.Repositories
             => _dbContext.Remove(item);
 
         public async Task<IEnumerable<T>> GetAllAsync()
-            => await _dbContext.Set<T>().ToListAsync();
+        { 
+            if (typeof(T) == typeof(Course))
+            {
+                return (IEnumerable<T>)await _dbContext.Coureses.Include(c => c.Category).ToListAsync() ;
+            }
+
+            return await _dbContext.Set<T>().ToListAsync();
+        } 
 
         public async Task<T> GetByIdAsync(T id)
             => await _dbContext.Set<T>().FindAsync(id);

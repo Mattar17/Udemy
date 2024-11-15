@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Udemy.Repository.Repositories
     {
         public CourseRepository(ApplicationDbContext dbContext):base(dbContext)
         {
-            
+            dbContext.Coureses.Include(c => c.Category);   
         }
     }
 }

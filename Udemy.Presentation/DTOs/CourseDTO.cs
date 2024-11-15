@@ -11,7 +11,8 @@ namespace Udemy.Presentation.DTOs
         public decimal Price { get; set; }
         public bool IsApproved { get; set; }
         public DateTime CreationDate { get; set; }
-        public CourseLevel Level { get; set; }
+        public string Level { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sbnafbeaG46zFz32rHR0/M9te9/Rv7YuG+A+d85uTpY=",
+  "Hash": "LHpEiREOfPjGRQ5b769F0lhtYT+6eIvkB8h38NRSMKg=",
   "Source": "Udemy.Presentation",
   "BasePath": "_content/Udemy.Presentation",
   "Mode": "Default",
@@ -22,18 +22,104 @@
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\",
       "BasePath": "_content/Udemy.Presentation",
-      "RelativePath": "uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg",
+      "RelativePath": "uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "plvfpneg6h",
+      "Integrity": "vaIh69kh0SU+k+buqvUjDwFOlkGlJUrOIiC2dKOOqF8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg",
+      "AssetFile": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vaIh69kh0SU+k+buqvUjDwFOlkGlJUrOIiC2dKOOqF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Nov 2024 15:32:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vaIh69kh0SU+k+buqvUjDwFOlkGlJUrOIiC2dKOOqF8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36.plvfpneg6h.jpg",
+      "AssetFile": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vaIh69kh0SU+k+buqvUjDwFOlkGlJUrOIiC2dKOOqF8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Nov 2024 15:32:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "plvfpneg6h"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vaIh69kh0SU+k+buqvUjDwFOlkGlJUrOIiC2dKOOqF8="
+        }
+      ]
     }
   ]
 }

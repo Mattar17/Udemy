@@ -158,3 +158,7 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MailKit.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\MimeKit.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Presentation.staticwebassets.runtime.json
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\AutoMapper.dll
+D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Presentation.staticwebassets.endpoints.json
+D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets\msbuild.Udemy.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

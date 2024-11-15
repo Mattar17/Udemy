@@ -250,7 +250,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("ChapterId");
 
-                    b.ToTable("ChapterLectures");
+                    b.ToTable("ChapterLectures", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.Course", b =>
@@ -289,7 +289,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Coureses");
+                    b.ToTable("Coureses", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.CourseCategory", b =>
@@ -306,7 +306,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CourseCategories");
+                    b.ToTable("CourseCategories", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.CourseChapter", b =>
@@ -332,7 +332,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("Course_id");
 
-                    b.ToTable("CourseChapters");
+                    b.ToTable("CourseChapters", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.CourseReview", b =>
@@ -367,7 +367,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CourseReviews");
+                    b.ToTable("CourseReviews", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.Message", b =>
@@ -387,7 +387,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Messages");
+                    b.ToTable("Messages", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.Notification", b =>
@@ -410,7 +410,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.Payment", b =>
@@ -442,7 +442,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Udemy.Domain.Models.Student_Course", b =>
@@ -470,7 +470,7 @@ namespace Udemy.Repository.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Student_Courses");
+                    b.ToTable("Student_Courses", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -8,7 +8,9 @@ namespace Udemy.Presentation.Helpers
     {
         public MappingProfiles()
         {
-            CreateMap<CourseDTO , Course>();
+            CreateMap<CourseDTO,Course>().ReverseMap().
+                ForMember(m=>m.CategoryName,
+                o=>o.MapFrom(c=>c.Category.Category));
         }
     }
 }
