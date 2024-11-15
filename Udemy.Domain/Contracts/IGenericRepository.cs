@@ -9,7 +9,7 @@ namespace Udemy.Domain.Contracts
     public interface IGenericRepository<T>
     {
         Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync (T id);
+        Task<T> GetByIdAsync (string id);
         Task Add(T item);
         void Update(T item);
         void Delete(T item);

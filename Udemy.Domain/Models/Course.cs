@@ -11,7 +11,7 @@ namespace Udemy.Domain.Models
     {
         public Course()
         {
-            Id = new Guid().ToString();
+            Id = Guid.NewGuid().ToString();
         }
         public string Id { get; set; }
         public string Title { get; set; }

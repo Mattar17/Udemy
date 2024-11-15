@@ -35,7 +35,7 @@ namespace Udemy.Repository.Repositories
             return await _dbContext.Set<T>().ToListAsync();
         } 
 
-        public async Task<T> GetByIdAsync(T id)
+        public async Task<T> GetByIdAsync(string id)
             => await _dbContext.Set<T>().FindAsync(id);
 
         public void Update(T item)
