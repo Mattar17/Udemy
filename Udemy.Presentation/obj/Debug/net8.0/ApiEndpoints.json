@@ -132,6 +132,32 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "AddChapter",
+    "RelativePath": "api/Course/AddChapter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chapter",
+        "Type": "Udemy.Presentation.DTOs.ChapterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.ChapterDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
     "Method": "GetAllCourses",
     "RelativePath": "api/Course/Courses",
     "HttpMethod": "GET",

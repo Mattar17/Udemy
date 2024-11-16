@@ -15,6 +15,8 @@ namespace Udemy.Presentation.Helpers
                 opt=>opt.MapFrom(c=>c.Instructor.DisplayName));
 
             CreateMap<CourseCreationDTO ,Course>();
+
+            CreateMap<ChapterDTO , CourseChapter>();
         }
     }
 }

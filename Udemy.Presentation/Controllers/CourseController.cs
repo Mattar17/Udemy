@@ -124,7 +124,29 @@ namespace Udemy.Presentation.Controllers
             else return BadRequest("Something gone wrong while updating");
         }
 
+        [HttpPost("AddChapter")]
+        [Authorize(Roles = "Instructor,Admin")]
+        public async Task<ActionResult<ChapterDTO>> AddChapter(ChapterDTO chapter)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
+            var InstructorId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var Course = await _unitOfWork.CourseRepository.GetByIdAsync(chapter.Course_id);
+
+            if (InstructorId != Course.InstructorId)
+            {
+                return Unauthorized("You Can't Add to this course");
+            }
+            var mappedChapter = _mapper.Map<CourseChapter>(chapter);
+            await _unitOfWork.ChapterRepository.Add(mappedChapter);
+
+            var Result = await _unitOfWork.CompleteAsync();
+            if (Result > 0)
+                return Ok(mappedChapter);
+
+            return BadRequest("Chapter Was NOT Added");
+        }
 
     }
 }

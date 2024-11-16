@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +9,9 @@ using Udemy.Repository.Context;
 
 namespace Udemy.Repository.Repositories
 {
-    public class CourseRepository : GenericRepository<Course>,ICourseRepository 
+    public class ChapterRepository:GenericRepository<CourseChapter>,ICourseChapterRepository
     {
-        public CourseRepository(ApplicationDbContext dbContext):base(dbContext)
+        public ChapterRepository(ApplicationDbContext dbContext):base(dbContext) 
         {
             
         }

@@ -9,6 +9,7 @@ namespace Udemy.Domain.Contracts
     public interface IUnitOfWork:IDisposable
     {
         ICourseRepository CourseRepository { get; }
+        ICourseChapterRepository ChapterRepository { get; }
         Task<int> CompleteAsync(); 
     }
 }
