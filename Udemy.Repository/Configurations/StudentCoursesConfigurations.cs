@@ -17,11 +17,13 @@ namespace Udemy.Repository.Configurations
 
             builder.HasOne(p => p.Course)
                 .WithMany(p => p.Course_Students)
-                .HasForeignKey(fk=>fk.CourseId);
+                .HasForeignKey(fk=>fk.CourseId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(p => p.User)
-                .WithMany(p => p.Student_Courses)
-                .HasForeignKey(k=>k.UserId);
+                .WithMany(p => p.student_Courses)
+                .HasForeignKey(k=>k.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

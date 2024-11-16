@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "D:\\Projects\\UdemyClone\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\UdemyClone\\Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|d:\\projects\\udemyclone\\udemy.repository\\configurations\\paymentconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|solutionrelative:udemy.repository\\configurations\\paymentconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|d:\\projects\\udemyclone\\udemy.repository\\configurations\\studentcoursesconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|solutionrelative:udemy.repository\\configurations\\studentcoursesconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|d:\\projects\\udemyclone\\udemy.repository\\configurations\\coursereviewsconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|solutionrelative:udemy.repository\\configurations\\coursereviewsconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\coursereview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\coursereview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\student_course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\student_course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\coursechapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\coursechapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\chapterlecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\chapterlecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|d:\\projects\\udemyclone\\udemy.repository\\configurations\\courseconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|solutionrelative:udemy.repository\\configurations\\courseconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +74,153 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20241116122738_Course Instructor Relation.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs",
+              "RelativeToolTip": "Udemy.Repository\\Migrations\\20241116122738_Course Instructor Relation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:27:38.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentConfigurations.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\PaymentConfigurations.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Configurations\\PaymentConfigurations.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\PaymentConfigurations.cs",
+              "RelativeToolTip": "Udemy.Repository\\Configurations\\PaymentConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:22:58.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CourseReviewsConfigurations.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\CourseReviewsConfigurations.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Configurations\\CourseReviewsConfigurations.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\CourseReviewsConfigurations.cs",
+              "RelativeToolTip": "Udemy.Repository\\Configurations\\CourseReviewsConfigurations.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:22:29.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CourseReview.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseReview.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\CourseReview.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseReview.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\CourseReview.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:00:29.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CourseChapter.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseChapter.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\CourseChapter.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseChapter.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\CourseChapter.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:14:59.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ChapterLecture.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\ChapterLecture.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\ChapterLecture.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\ChapterLecture.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\ChapterLecture.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:14:43.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentCoursesConfigurations.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\StudentCoursesConfigurations.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Configurations\\StudentCoursesConfigurations.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\StudentCoursesConfigurations.cs",
+              "RelativeToolTip": "Udemy.Repository\\Configurations\\StudentCoursesConfigurations.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwBkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T11:24:34.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Student_Course.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Student_Course.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\Student_Course.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Student_Course.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\Student_Course.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:53:29.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CourseCategory.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseCategory.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\CourseCategory.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\CourseCategory.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\CourseCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:52:44.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAywA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:47:10.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CourseConfigurations.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\CourseConfigurations.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Configurations\\CourseConfigurations.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Configurations\\CourseConfigurations.cs",
+              "RelativeToolTip": "Udemy.Repository\\Configurations\\CourseConfigurations.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA4wBYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:46:07.794Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "Udemy.Domain\\Models\\Course.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\Course.cs",
+              "RelativeToolTip": "Udemy.Domain\\Models\\Course.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwBkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:44:46.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "MappingProfiles.cs",
               "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Helpers\\MappingProfiles.cs",
               "RelativeDocumentMoniker": "Udemy.Presentation\\Helpers\\MappingProfiles.cs",
@@ -34,21 +228,19 @@
               "RelativeToolTip": "Udemy.Presentation\\Helpers\\MappingProfiles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T09:02:58.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-16T09:02:58.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "CourseController.cs",
               "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "Udemy.Presentation\\Controllers\\CourseController.cs",
-              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\CourseController.cs*",
-              "RelativeToolTip": "Udemy.Presentation\\Controllers\\CourseController.cs*",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAEsAAAAhAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Udemy.Presentation\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwFsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T08:56:25.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-16T08:56:25.924Z"
             }
           ]
         }

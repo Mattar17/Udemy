@@ -11,7 +11,9 @@ namespace Udemy.Domain.Models
     {
         public string DisplayName { get; set; }
         public string? PricureUrl { get; set; }
-        public ICollection<Student_Course>? Student_Courses { get; set; }
+
+        public ICollection<Course>? Instructor_Courses { get; set; }
+        public ICollection<Student_Course>? student_Courses { get; set; } = new HashSet<Student_Course>();
         public ICollection<Notification>? Notifications { get; set; }
         public ICollection<Payment>? Payments { get; set; }
         //public ICollection<Message>? SentMessages { get; set; }

@@ -17,6 +17,11 @@ namespace Udemy.Repository.Configurations
                 .WithMany(cat => cat.courses)
                 .HasForeignKey(c => c.CategoryId);
 
+            builder.HasOne(i => i.Instructor)
+                .WithMany(c => c.Instructor_Courses)
+                .HasForeignKey(fk => fk.InstructorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             builder.Property(c => c.Level)
                 .HasConversion<string>();
 

@@ -23,6 +23,8 @@ namespace Udemy.Domain.Models
         public string Level { get; set; }
         public int CategoryId { get; set; }
         public CourseCategory Category { get; set; }
+        public string? InstructorId { get; set; }
+        public ApplicationUser Instructor { get; set; }
         public ICollection<CourseReview>? CourseReviews { get; set; }
         public ICollection<CourseChapter>? Course_Chapters { get; set; }
         public ICollection<Student_Course>? Course_Students { get; set; }

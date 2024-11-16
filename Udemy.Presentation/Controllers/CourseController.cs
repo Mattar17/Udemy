@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -37,7 +38,20 @@ namespace Udemy.Presentation.Controllers
             return Ok(MappedCourses);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CourseDTO>> GetCourse(string id)
+        {
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
+            
+            if (course == null)
+                return NotFound();
+
+            var MappedCourse = _mapper.Map<CourseDTO>(course);
+            return Ok(MappedCourse);
+        }
+
         [HttpPost("CreateCourse")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<ActionResult<CourseDTO>> CreateCourse(CourseCreationDTO course , CourseLevel courseLevel)
         {
             if (!ModelState.IsValid)
@@ -57,6 +71,7 @@ namespace Udemy.Presentation.Controllers
         }
 
         [HttpDelete("DeleteCourse")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<ActionResult> DeleteCourse(string Id)
         {
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(Id);
@@ -74,6 +89,7 @@ namespace Udemy.Presentation.Controllers
         }
 
         [HttpPut("UpdateCourse")]
+        [Authorize(Roles = "Instructor,Admin")]
         public async Task<ActionResult> UpdateCourse([FromBody]CourseCreationDTO model,string id)
         {
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
@@ -94,6 +110,8 @@ namespace Udemy.Presentation.Controllers
 
             else return BadRequest("Something gone wrong while updating");
         }
+
+
 
     }
 }
