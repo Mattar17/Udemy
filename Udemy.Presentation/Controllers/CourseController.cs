@@ -18,7 +18,7 @@ namespace Udemy.Presentation.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public CourseController(IUnitOfWork unitOfWork,IMapper mapper)
+        public CourseController(IUnitOfWork unitOfWork , IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -38,7 +38,7 @@ namespace Udemy.Presentation.Controllers
         }
 
         [HttpPost("CreateCourse")]
-        public async Task<ActionResult<CourseDTO>> CreateCourse(CourseCreationDTO course,CourseLevel courseLevel)
+        public async Task<ActionResult<CourseDTO>> CreateCourse(CourseCreationDTO course , CourseLevel courseLevel)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -50,7 +50,7 @@ namespace Udemy.Presentation.Controllers
 
             var Result = await _unitOfWork.CompleteAsync();
 
-            if (Result>0)
+            if (Result > 0)
                 return Ok(course);
 
             else return BadRequest("Course Wasn't Added");
@@ -71,6 +71,28 @@ namespace Udemy.Presentation.Controllers
                 return Ok("Course Deleted");
 
             return BadRequest();
+        }
+
+        [HttpPut("UpdateCourse")]
+        public async Task<ActionResult> UpdateCourse([FromBody]CourseCreationDTO model,string id)
+        {
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
+            if (course is null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            course = _mapper.Map(model,course);
+            
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result>0)
+                return Ok("Coures Updated");
+
+            else return BadRequest("Something gone wrong while updating");
         }
 
     }

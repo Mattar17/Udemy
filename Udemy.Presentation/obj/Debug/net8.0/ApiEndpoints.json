@@ -170,5 +170,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "UpdateCourse",
+    "RelativePath": "api/Course/UpdateCourse",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Udemy.Presentation.DTOs.CourseCreationDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
