@@ -26,10 +26,13 @@ namespace Udemy.Repository.Repositories
             => _dbContext.Remove(item);
 
         public async Task<IEnumerable<T>> GetAllAsync()
-        { 
+        {
             if (typeof(T) == typeof(Course))
             {
-                return (IEnumerable<T>)await _dbContext.Coureses.Include(c => c.Category).ToListAsync() ;
+                return (IEnumerable<T>)await _dbContext.Coureses
+                    .Include(c => c.Category)
+                    .Include(c=>c.Instructor)
+                    .ToListAsync();
             }
 
             return await _dbContext.Set<T>().ToListAsync();

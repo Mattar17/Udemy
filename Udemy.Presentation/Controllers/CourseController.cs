@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Enums;
 using Udemy.Domain.Models;
@@ -60,12 +61,14 @@ namespace Udemy.Presentation.Controllers
             course.Level = courseLevel.ToString();
 
             var newCourse = _mapper.Map<Course>(course);
+            newCourse.InstructorId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             await _unitOfWork.CourseRepository.Add(newCourse);
 
             var Result = await _unitOfWork.CompleteAsync();
 
+            var MappedCourse = _mapper.Map<CourseDTO>(newCourse);
             if (Result > 0)
-                return Ok(course);
+                return Ok(MappedCourse);
 
             else return BadRequest("Course Wasn't Added");
         }
@@ -75,6 +78,11 @@ namespace Udemy.Presentation.Controllers
         public async Task<ActionResult> DeleteCourse(string Id)
         {
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(Id);
+
+            if (course.InstructorId != User.FindFirstValue(ClaimTypes.NameIdentifier))
+            {
+                return Unauthorized("You can't Delete this course");
+            }
 
             if (course is null)
                 return NotFound();
@@ -95,6 +103,11 @@ namespace Udemy.Presentation.Controllers
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
             if (course is null)
                 return NotFound();
+
+            if (course.InstructorId != User.FindFirstValue(ClaimTypes.NameIdentifier))
+            {
+                return Unauthorized("You can't Edit this course");
+            }
 
             if (!ModelState.IsValid)
             {

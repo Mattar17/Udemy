@@ -10,7 +10,9 @@ namespace Udemy.Presentation.Helpers
         {
             CreateMap<CourseDTO,Course>().ReverseMap().
                 ForMember(m=>m.CategoryName,
-                o=>o.MapFrom(c=>c.Category.Category));
+                o=>o.MapFrom(c=>c.Category.Category))
+                .ForMember(m=>m.InstructorName,
+                opt=>opt.MapFrom(c=>c.Instructor.DisplayName));
 
             CreateMap<CourseCreationDTO ,Course>();
         }

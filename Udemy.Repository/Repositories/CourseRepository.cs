@@ -14,7 +14,8 @@ namespace Udemy.Repository.Repositories
     {
         public CourseRepository(ApplicationDbContext dbContext):base(dbContext)
         {
-            dbContext.Coureses.Include(c => c.Category);   
+            dbContext.Coureses.Include(c => c.Category);
+            dbContext.Coureses.Include(c=>c.Instructor);
         }
     }
 }

@@ -464,6 +464,10 @@
           "categoryName": {
             "type": "string",
             "nullable": true
+          },
+          "instructorName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

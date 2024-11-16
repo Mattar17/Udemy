@@ -5,15 +5,16 @@ namespace Udemy.Presentation.DTOs
 {
     public class CourseDTO
     {
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string? Id { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
         public string? PreviewPictureUrl { get; set; }
         public decimal Price { get; set; }
         public bool IsApproved { get; set; }
         public DateTime CreationDate { get; set; }
-        public string Level { get; set; }
+        public string? Level { get; set; }
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+        public string? CategoryName { get; set; }
+        public string? InstructorName { get; set; }
     }
 }
