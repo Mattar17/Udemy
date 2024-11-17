@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Repository.Context;
+using Udemy.Repository.Specification;
 
 namespace Udemy.Repository.Repositories
 {
@@ -26,23 +27,17 @@ namespace Udemy.Repository.Repositories
             => _dbContext.Remove(item);
 
         public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            if (typeof(T) == typeof(Course))
-            {
-                return (IEnumerable<T>)await _dbContext.Coureses
-                    .Include(c => c.Category)
-                    .Include(c=>c.Instructor)
-                    .Include(c=>c.Course_Chapters)
-                    .ToListAsync();
-            }
-
-            return await _dbContext.Set<T>().ToListAsync();
-        } 
+            => await _dbContext.Set<T>().ToListAsync(); 
 
         public async Task<T> GetByIdAsync(string id)
             => await _dbContext.Set<T>().FindAsync(id);
 
         public void Update(T item)
             => _dbContext.Update(item);
+
+        private IQueryable<T> ApplySpecification(SpecificationBase<T> specification)
+        {
+            return SpecificationEvaluator.GetQuery(_dbContext.Set<T>() , specification);
+        }
     }
 }
