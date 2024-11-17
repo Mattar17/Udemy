@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Presentation.Extensions;
@@ -18,7 +19,9 @@ namespace Udemy.Presentation
 
             #region Services
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x => x.
+            JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

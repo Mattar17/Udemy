@@ -641,6 +641,13 @@
             },
             "nullable": true
           },
+          "course_Chapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CourseChapter"
+            },
+            "nullable": true
+          },
           "course_Students": {
             "type": "array",
             "items": {
@@ -687,12 +694,12 @@
             "type": "integer",
             "format": "int32"
           },
-          "course": {
-            "$ref": "#/components/schemas/Course"
-          },
           "course_id": {
             "type": "string",
             "nullable": true
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
           },
           "chapter_Lectures": {
             "type": "array",
@@ -784,7 +791,7 @@
             "type": "string",
             "nullable": true
           },
-          "courseChapters": {
+          "course_Chapters": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CourseChapter"
