@@ -32,6 +32,7 @@ namespace Udemy.Repository.Repositories
                 return (IEnumerable<T>)await _dbContext.Coureses
                     .Include(c => c.Category)
                     .Include(c=>c.Instructor)
+                    .Include(c=>c.Course_Chapters)
                     .ToListAsync();
             }
 

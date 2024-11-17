@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Udemy.Domain.Enums;
 
@@ -26,6 +27,7 @@ namespace Udemy.Domain.Models
         public string? InstructorId { get; set; }
         public ApplicationUser Instructor { get; set; }
         public ICollection<CourseReview>? CourseReviews { get; set; }
+        [JsonIgnore]
         public ICollection<CourseChapter>? Course_Chapters { get; set; }
         public ICollection<Student_Course>? Course_Students { get; set; }
 
