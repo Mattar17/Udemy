@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Udemy.Domain.Contracts
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync (string id);
+        Task<IEnumerable<T>> GetAllAsync(ISpecificationBase<T> specification);
+        Task<T> GetByIdAsync (ISpecificationBase<T> specification);
         Task Add(T item);
         void Update(T item);
         void Delete(T item);

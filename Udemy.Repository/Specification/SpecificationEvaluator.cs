@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Udemy.Domain.Contracts;
 
 namespace Udemy.Repository.Specification
 {
     public static class SpecificationEvaluator
     {
         public static IQueryable<TEntity> GetQuery<TEntity>
-            (IQueryable<TEntity> inputQuerable,SpecificationBase<TEntity> specification) where TEntity : class
+            (IQueryable<TEntity> inputQuerable,ISpecificationBase<TEntity> specification) where TEntity : class
         {
             IQueryable<TEntity> Queryable = inputQuerable;
 
