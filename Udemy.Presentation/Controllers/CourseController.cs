@@ -10,6 +10,7 @@ using Udemy.Domain.Models;
 using Udemy.Presentation.DTOs;
 using Udemy.Presentation.Helpers;
 using Udemy.Repository.Context;
+using Udemy.Repository.Specification;
 
 namespace Udemy.Presentation.Controllers
 {
@@ -29,7 +30,8 @@ namespace Udemy.Presentation.Controllers
         [HttpGet("Courses")]
         public async Task<ActionResult<IEnumerable<CourseDTO>>> GetAllCourses()
         {
-            var Courses = await _unitOfWork.CourseRepository.GetAllAsync();
+            var specification = new CourseIncludesSpecification();
+            var Courses = await _unitOfWork.CourseRepository.GetAllAsync(specification);
 
             if (Courses.Count() == 0)
                 return NotFound();
@@ -42,7 +44,8 @@ namespace Udemy.Presentation.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<CourseDTO>> GetCourse(string id)
         {
-            var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
+            var specification = new GetCourseByIdSpecification(id);
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
             
             if (course == null)
                 return NotFound();
@@ -77,7 +80,8 @@ namespace Udemy.Presentation.Controllers
         [Authorize(Roles = "Instructor,Admin")]
         public async Task<ActionResult> DeleteCourse(string Id)
         {
-            var course = await _unitOfWork.CourseRepository.GetByIdAsync(Id);
+            var specification = new GetCourseByIdSpecification(Id);
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
 
             if (course.InstructorId != User.FindFirstValue(ClaimTypes.NameIdentifier))
             {
@@ -100,7 +104,8 @@ namespace Udemy.Presentation.Controllers
         [Authorize(Roles = "Instructor,Admin")]
         public async Task<ActionResult> UpdateCourse([FromBody]CourseCreationDTO model,string id)
         {
-            var course = await _unitOfWork.CourseRepository.GetByIdAsync(id);
+            var specification = new GetCourseByIdSpecification(id);
+            var course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
             if (course is null)
                 return NotFound();
 
@@ -132,12 +137,16 @@ namespace Udemy.Presentation.Controllers
                 return BadRequest();
 
             var InstructorId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var Course = await _unitOfWork.CourseRepository.GetByIdAsync(chapter.Course_id);
+
+
+            var specification = new GetCourseByIdSpecification(chapter.Course_id);
+            var Course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
 
             if (InstructorId != Course.InstructorId)
             {
                 return Unauthorized("You Can't Add to this course");
             }
+
             var mappedChapter = _mapper.Map<CourseChapter>(chapter);
             await _unitOfWork.ChapterRepository.Add(mappedChapter);
 
