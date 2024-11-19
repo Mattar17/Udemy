@@ -437,105 +437,6 @@
   },
   "components": {
     "schemas": {
-      "ApplicationUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedUserName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "emailConfirmed": {
-            "type": "boolean"
-          },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "securityStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "concurrencyStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumberConfirmed": {
-            "type": "boolean"
-          },
-          "twoFactorEnabled": {
-            "type": "boolean"
-          },
-          "lockoutEnd": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lockoutEnabled": {
-            "type": "boolean"
-          },
-          "accessFailedCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "displayName": {
-            "type": "string",
-            "nullable": true
-          },
-          "pricureUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "instructor_Courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            },
-            "nullable": true
-          },
-          "student_Courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Student_Course"
-            },
-            "nullable": true
-          },
-          "notifications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Notification"
-            },
-            "nullable": true
-          },
-          "payments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Payment"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ChapterDTO": {
         "required": [
           "chapter_Name",
@@ -557,156 +458,6 @@
           "course_id": {
             "minLength": 1,
             "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ChapterLecture": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "lecture_Title": {
-            "type": "string",
-            "nullable": true
-          },
-          "mediaUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "courseChapter": {
-            "$ref": "#/components/schemas/CourseChapter"
-          },
-          "chapterId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Course": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "previewPictureUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
-          "isApproved": {
-            "type": "boolean"
-          },
-          "creationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "level": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "category": {
-            "$ref": "#/components/schemas/CourseCategory"
-          },
-          "instructorId": {
-            "type": "string",
-            "nullable": true
-          },
-          "instructor": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          },
-          "courseReviews": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CourseReview"
-            },
-            "nullable": true
-          },
-          "course_Chapters": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CourseChapter"
-            },
-            "nullable": true
-          },
-          "course_Students": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Student_Course"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CourseCategory": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "category": {
-            "type": "string",
-            "nullable": true
-          },
-          "courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CourseChapter": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "chapter_Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "chapter_Number": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "course_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "course": {
-            "$ref": "#/components/schemas/Course"
-          },
-          "chapter_Lectures": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ChapterLecture"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -794,7 +545,7 @@
           "course_Chapters": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CourseChapter"
+              "$ref": "#/components/schemas/ChapterDTO"
             },
             "nullable": true
           }
@@ -809,41 +560,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "CourseReview": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "review_Content": {
-            "type": "string",
-            "nullable": true
-          },
-          "creationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isApproved": {
-            "type": "boolean"
-          },
-          "user": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          },
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
-          "course": {
-            "$ref": "#/components/schemas/Course"
-          },
-          "courseId": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "LoginDTO": {
         "type": "object",
@@ -861,59 +577,6 @@
             "nullable": true
           },
           "pictureUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Notification": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "content": {
-            "type": "string",
-            "nullable": true
-          },
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Payment": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "paymentMethodId": {
-            "type": "string",
-            "nullable": true
-          },
-          "purchaseDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "buyer": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          },
-          "buyerId": {
-            "type": "string",
-            "nullable": true
-          },
-          "course": {
-            "$ref": "#/components/schemas/Course"
-          },
-          "courseId": {
             "type": "string",
             "nullable": true
           }
@@ -979,38 +642,6 @@
           "confirmPassword": {
             "minLength": 1,
             "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Student_Course": {
-        "type": "object",
-        "properties": {
-          "enrollmentDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "lastWatchedLectureId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "completedPercentage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          },
-          "courseId": {
-            "type": "string",
-            "nullable": true
-          },
-          "course": {
-            "$ref": "#/components/schemas/Course"
           }
         },
         "additionalProperties": false

@@ -16,6 +16,7 @@ namespace Udemy.Repository.Specification
             AddInclude(x => x.Category);
             AddInclude(x => x.Course_Chapters);
             AddInclude(x => x.CourseReviews);
+            AddInclude(x => x.Instructor);
         }
         
     }

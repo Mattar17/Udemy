@@ -16,7 +16,7 @@ namespace Udemy.Presentation.Helpers
 
             CreateMap<CourseCreationDTO ,Course>();
 
-            CreateMap<ChapterDTO , CourseChapter>();
+            CreateMap<ChapterDTO , CourseChapter>().ReverseMap();
         }
     }
 }

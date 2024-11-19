@@ -152,7 +152,7 @@ namespace Udemy.Presentation.Controllers
 
             var Result = await _unitOfWork.CompleteAsync();
             if (Result > 0)
-                return Ok(mappedChapter);
+                return Ok(chapter);
 
             return BadRequest("Chapter Was NOT Added");
         }

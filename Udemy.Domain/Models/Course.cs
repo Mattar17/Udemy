@@ -26,9 +26,9 @@ namespace Udemy.Domain.Models
         public CourseCategory Category { get; set; }
         public string? InstructorId { get; set; }
         public ApplicationUser Instructor { get; set; }
-        public ICollection<CourseReview>? CourseReviews { get; set; } = new HashSet<CourseReview>();
-        public ICollection<CourseChapter>? Course_Chapters { get; set; } = new HashSet<CourseChapter>();
-        public ICollection<Student_Course>? Course_Students { get; set; } = new HashSet<Student_Course>();
+        public ICollection<CourseReview>? CourseReviews { get; set; }
+        public ICollection<CourseChapter>? Course_Chapters { get; set; } 
+        public ICollection<Student_Course>? Course_Students { get; set; }
 
 
     }

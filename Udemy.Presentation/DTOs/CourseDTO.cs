@@ -16,6 +16,6 @@ namespace Udemy.Presentation.DTOs
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
         public string? InstructorName { get; set; }
-        public ICollection<CourseChapter>? Course_Chapters { get; set; } = new HashSet<CourseChapter>();
+        public ICollection<ChapterDTO>? Course_Chapters { get; set; }
     }
 }
