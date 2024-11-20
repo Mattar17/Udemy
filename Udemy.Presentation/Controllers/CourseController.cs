@@ -26,7 +26,9 @@ namespace Udemy.Presentation.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+        #region Get All Courses + GetCourse By id
 
+        
         [HttpGet("Courses")]
         public async Task<ActionResult<IEnumerable<CourseDTO>>> GetAllCourses()
         {
@@ -53,6 +55,9 @@ namespace Udemy.Presentation.Controllers
             var MappedCourse = _mapper.Map<CourseDTO>(course);
             return Ok(MappedCourse);
         }
+        #endregion
+        #region Create Course
+
 
         [HttpPost("CreateCourse")]
         [Authorize(Roles = "Instructor,Admin")]
@@ -75,6 +80,9 @@ namespace Udemy.Presentation.Controllers
 
             else return BadRequest("Course Wasn't Added");
         }
+        #endregion
+        #region Update-Delete Course
+
 
         [HttpDelete("DeleteCourse")]
         [Authorize(Roles = "Instructor,Admin")]
@@ -128,9 +136,13 @@ namespace Udemy.Presentation.Controllers
 
             else return BadRequest("Something gone wrong while updating");
         }
+        #endregion
+        #region Add Chapter
 
+       
         [HttpPost("AddChapter")]
         [Authorize(Roles = "Instructor,Admin")]
+
         public async Task<ActionResult<ChapterDTO>> AddChapter(ChapterDTO chapter)
         {
             if (!ModelState.IsValid)
@@ -156,6 +168,37 @@ namespace Udemy.Presentation.Controllers
 
             return BadRequest("Chapter Was NOT Added");
         }
+        #endregion
+        #region Add Lecture to a Chapter
+        [HttpPost("AddLecture")]
+        [Authorize(Roles = "Admin,Instructor")]
+        public async Task<ActionResult<LectureDTO>> AddLecture(LectureDTO lecture)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model isn't Valid");
+
+            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+
+            if (Chapter is null)
+                return NotFound();
+
+            var Course = await _unitOfWork.CourseRepository.GetById(Chapter.Course_id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (Course.InstructorId != userId)
+                return Unauthorized("You Can't Add to this course");
+
+            var MappedLecture = _mapper.Map<ChapterLecture>(lecture);
+            MappedLecture.MediaUrl = "Not Found";
+            await _unitOfWork.LectureRepository.Add(MappedLecture);
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result > 0)
+                return Ok(lecture);
+            else
+                return BadRequest("Lecture not added!");
+        }
+        #endregion
 
     }
 }

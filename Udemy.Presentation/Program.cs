@@ -33,6 +33,7 @@ namespace Udemy.Presentation
             builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
             builder.Services.AddScoped<ICourseRepository,CourseRepository>();
             builder.Services.AddScoped<ICourseChapterRepository,ChapterRepository>();
+            builder.Services.AddScoped<ILectureRepository , LectureRepository>();
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);

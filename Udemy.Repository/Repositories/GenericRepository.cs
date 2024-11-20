@@ -32,6 +32,9 @@ namespace Udemy.Repository.Repositories
         public async Task<T> GetByIdAsync(ISpecificationBase<T> specification)
             => await ApplySpecification(specification).FirstOrDefaultAsync();
 
+        public async Task<T> GetById(string id)
+            => await _dbContext.Set<T>().FindAsync(id);
+
         public void Update(T item)
             => _dbContext.Update(item);
 
@@ -39,5 +42,8 @@ namespace Udemy.Repository.Repositories
         {
             return SpecificationEvaluator.GetQuery(_dbContext.Set<T>() , specification);
         }
+
+        public async Task<T> GetByIntId(int id)
+            => await _dbContext.Set<T>().FindAsync(id);
     }
 }

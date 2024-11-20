@@ -10,6 +10,7 @@ namespace Udemy.Domain.Contracts
     {
         ICourseRepository CourseRepository { get; }
         ICourseChapterRepository ChapterRepository { get; }
+        ILectureRepository LectureRepository { get; }
         Task<int> CompleteAsync(); 
     }
 }
