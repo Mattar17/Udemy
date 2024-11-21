@@ -5,6 +5,7 @@ namespace Udemy.Presentation.DTOs
 {
     public class ChapterDTO
     {
+        public int Id { get; set; }
         [Required]
         [MinLength(5)]
         public string Chapter_Name { get; set; }

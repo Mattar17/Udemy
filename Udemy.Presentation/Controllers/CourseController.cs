@@ -26,9 +26,12 @@ namespace Udemy.Presentation.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+
+        #region Course endpoints
         #region Get All Courses + GetCourse By id
 
-        
+
         [HttpGet("Courses")]
         public async Task<ActionResult<IEnumerable<CourseDTO>>> GetAllCourses()
         {
@@ -48,7 +51,7 @@ namespace Udemy.Presentation.Controllers
         {
             var specification = new GetCourseByIdSpecification(id);
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
-            
+
             if (course == null)
                 return NotFound();
 
@@ -67,9 +70,12 @@ namespace Udemy.Presentation.Controllers
                 return BadRequest();
 
             course.Level = courseLevel.ToString();
+            var PreviewPicUrl = await FileUpload.UploadFileAsync(course.PreviewPicture);
 
             var newCourse = _mapper.Map<Course>(course);
             newCourse.InstructorId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            newCourse.PreviewPictureUrl = PreviewPicUrl;
             await _unitOfWork.CourseRepository.Add(newCourse);
 
             var Result = await _unitOfWork.CompleteAsync();
@@ -78,7 +84,8 @@ namespace Udemy.Presentation.Controllers
             if (Result > 0)
                 return Ok(MappedCourse);
 
-            else return BadRequest("Course Wasn't Added");
+            else
+                return BadRequest("Course Wasn't Added");
         }
         #endregion
         #region Update-Delete Course
@@ -110,7 +117,7 @@ namespace Udemy.Presentation.Controllers
 
         [HttpPut("UpdateCourse")]
         [Authorize(Roles = "Instructor,Admin")]
-        public async Task<ActionResult> UpdateCourse([FromBody]CourseCreationDTO model,string id)
+        public async Task<ActionResult> UpdateCourse([FromBody] CourseCreationDTO model , string id)
         {
             var specification = new GetCourseByIdSpecification(id);
             var course = await _unitOfWork.CourseRepository.GetByIdAsync(specification);
@@ -127,19 +134,25 @@ namespace Udemy.Presentation.Controllers
                 return BadRequest();
             }
 
-            course = _mapper.Map(model,course);
-            
+            course = _mapper.Map(model , course);
+
             var Result = await _unitOfWork.CompleteAsync();
 
-            if (Result>0)
+            if (Result > 0)
                 return Ok("Coures Updated");
 
-            else return BadRequest("Something gone wrong while updating");
+            else
+                return BadRequest("Something gone wrong while updating");
         }
         #endregion
+        #endregion
+
+
+
+        #region Chapter endpoints
         #region Add Chapter
 
-       
+
         [HttpPost("AddChapter")]
         [Authorize(Roles = "Instructor,Admin")]
 
@@ -187,6 +200,70 @@ namespace Udemy.Presentation.Controllers
         }
 
         #endregion
+        #region UpdateChapter
+        [HttpPut("UpdateChapter")]
+        [Authorize(Roles = "Instructor,Admin")]
+        public async Task<ActionResult> UpdateChapter(ChapterDTO chapter)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var reqChapter = await _unitOfWork.ChapterRepository.GetByIntId(chapter.Id);
+
+            if (chapter is null)
+                return NotFound();
+
+            var Course = await _unitOfWork.CourseRepository.GetById(chapter.Course_id);
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (UserId != Course.InstructorId)
+                return Unauthorized("You can't Update this Chapter");
+
+            var mappedChapter = _mapper.Map<CourseChapter>(chapter);
+            _unitOfWork.ChapterRepository.Update(mappedChapter);
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result>0)
+                return Ok("Chapter is updated");
+
+            else return 
+                    BadRequest("Chapter NOT updated");
+        }
+
+        #endregion
+        #region DeleteChapter
+        [HttpDelete("DeleteChapter")]
+        [Authorize(Roles = "Instructor,Admin")]
+        public async Task<ActionResult> DeleteChapter(int id)
+        {
+
+            var chapter = await _unitOfWork.ChapterRepository.GetByIntId(id);
+
+            if (chapter is null)
+                return NotFound();
+
+            var Course = await _unitOfWork.CourseRepository.GetById(chapter.Course_id);
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (UserId != Course.InstructorId)
+                return Unauthorized("You can't Update this Chapter");
+
+            _unitOfWork.ChapterRepository.Delete(chapter);
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result > 0)
+                return Ok("Chapter Deleted");
+
+            else
+                return
+                    BadRequest("Chapter NOT Deleted");
+        }
+        #endregion
+        #endregion
+
+
+
+        #region Lecture endpoints
         #region Add Lecture to a Chapter
         [HttpPost("AddLecture")]
         [Authorize(Roles = "Admin,Instructor")]
@@ -220,8 +297,74 @@ namespace Udemy.Presentation.Controllers
         }
         #endregion
         #region GetLectureById
-        
-        #endregion
 
+        #endregion
+        #region UpdateLecture
+        [HttpPut("UpdateLecture")]
+        [Authorize(Roles = "Admin,Instructor")]
+        public async Task<ActionResult> UpdateLecture([FromForm] LectureCreationDTO lecture)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model isn't Valid");
+
+            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+
+            if (Chapter is null)
+                return NotFound();
+
+            var Course = await _unitOfWork.CourseRepository.GetById(Chapter.Course_id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (Course.InstructorId != userId)
+                return Unauthorized("You Can't Add to this course");
+
+
+            var MappedLecture = _mapper.Map<ChapterLecture>(lecture);
+
+            if (lecture.MediaUrl is not null)
+            {
+                var MediaUrl = await FileUpload.UploadFileAsync(lecture.MediaUrl);
+                MappedLecture.MediaUrl = MediaUrl;
+            }
+            
+            _unitOfWork.LectureRepository.Update(MappedLecture);
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result > 0)
+                return Ok("Lecture Was Updated Successfully!");
+            else
+                return BadRequest("Lecture NOT Updated!");
+        }
+        #endregion
+        #region DeleteLecture
+        [HttpDelete("DeleteLecture")]
+        [Authorize(Roles = "Admin,Instructor")]
+        public async Task<ActionResult> DeleteLecture(int id)
+        {
+            var lecture = await _unitOfWork.LectureRepository.GetByIntId(id);
+            if (lecture == null) return NotFound();
+
+            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+
+            if (Chapter is null)
+                return NotFound();
+
+            var Course = await _unitOfWork.CourseRepository.GetById(Chapter.Course_id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (Course.InstructorId != userId)
+                return Unauthorized("You Can't Add to this course");
+
+
+            _unitOfWork.LectureRepository.Delete(lecture);
+            var Result = await _unitOfWork.CompleteAsync();
+
+            if (Result > 0)
+                return Ok("Lecture Was Deleted Successfully!");
+            else
+                return BadRequest("Lecture NOT Deleted!");
+        }
+        #endregion
+        #endregion
     }
 }
