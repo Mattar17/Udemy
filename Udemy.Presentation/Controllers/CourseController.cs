@@ -169,10 +169,28 @@ namespace Udemy.Presentation.Controllers
             return BadRequest("Chapter Was NOT Added");
         }
         #endregion
+        #region GetChapterById
+        [HttpGet("ChapterById")]
+        [Authorize(Roles = "Admin,Instructor")]
+        public async Task<ActionResult<ChapterDTO>> GetChapterById(int id)
+        {
+            var specification = new ChapterWithLecturesSpecification(id);
+            var chapter = await _unitOfWork.ChapterRepository.GetByIdAsync(specification);
+
+            if (chapter is null)
+                return NotFound();
+
+            var mappedChapter = _mapper.Map<ChapterDTO>(chapter);
+
+            return Ok(chapter);
+
+        }
+
+        #endregion
         #region Add Lecture to a Chapter
         [HttpPost("AddLecture")]
         [Authorize(Roles = "Admin,Instructor")]
-        public async Task<ActionResult<LectureDTO>> AddLecture(LectureDTO lecture)
+        public async Task<ActionResult> AddLecture([FromForm]LectureCreationDTO lecture)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Model isn't Valid");
@@ -188,16 +206,21 @@ namespace Udemy.Presentation.Controllers
             if (Course.InstructorId != userId)
                 return Unauthorized("You Can't Add to this course");
 
+            var MediaUrl = await FileUpload.UploadFileAsync(lecture.MediaUrl);
+
             var MappedLecture = _mapper.Map<ChapterLecture>(lecture);
-            MappedLecture.MediaUrl = "Not Found";
+            MappedLecture.MediaUrl = MediaUrl;
             await _unitOfWork.LectureRepository.Add(MappedLecture);
             var Result = await _unitOfWork.CompleteAsync();
 
             if (Result > 0)
-                return Ok(lecture);
+                return Ok("Lecture Was Added Successfully!");
             else
                 return BadRequest("Lecture not added!");
         }
+        #endregion
+        #region GetLectureById
+        
         #endregion
 
     }

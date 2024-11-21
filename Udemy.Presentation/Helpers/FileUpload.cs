@@ -3,7 +3,7 @@ namespace Udemy.Presentation.Helpers
 {
     public class FileUpload
     {
-        private static readonly string _baseUploadPath = "wwwroot/uploads";
+        private static readonly string _baseUploadPath = "wwwroot/uploads/";
 
         public FileUpload()
         {

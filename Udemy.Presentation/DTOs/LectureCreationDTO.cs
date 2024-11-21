@@ -2,11 +2,10 @@
 
 namespace Udemy.Presentation.DTOs
 {
-    public class LectureDTO
+    public class LectureCreationDTO
     {
-        public int Id { get; set; }
         public string Lecture_Title { get; set; }
-        public string MediaUrl { get; set; }
-
+        public int ChapterId { get; set; }
+        public IFormFile MediaUrl { get; set; }
     }
 }

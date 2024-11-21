@@ -434,6 +434,45 @@
         }
       }
     },
+    "/api/Course/ChapterById": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Course/AddLecture": {
       "post": {
         "tags": [
@@ -441,43 +480,40 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/LectureDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LectureDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LectureDTO"
+                "type": "object",
+                "properties": {
+                  "Lecture_Title": {
+                    "type": "string"
+                  },
+                  "ChapterId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "MediaUrl": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Lecture_Title": {
+                  "style": "form"
+                },
+                "ChapterId": {
+                  "style": "form"
+                },
+                "MediaUrl": {
+                  "style": "form"
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/LectureDTO"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LectureDTO"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LectureDTO"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -494,7 +530,7 @@
         "type": "object",
         "properties": {
           "chapter_Name": {
-            "minLength": 10,
+            "minLength": 5,
             "type": "string"
           },
           "chapter_Number": {
@@ -506,6 +542,13 @@
           "course_id": {
             "minLength": 1,
             "type": "string"
+          },
+          "course_Lectures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LectureDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -612,13 +655,17 @@
       "LectureDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "lecture_Title": {
             "type": "string",
             "nullable": true
           },
-          "chapterId": {
-            "type": "integer",
-            "format": "int32"
+          "mediaUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

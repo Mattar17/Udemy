@@ -165,14 +165,40 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "lecture",
-        "Type": "Udemy.Presentation.DTOs.LectureDTO",
-        "IsRequired": true
+        "Name": "Lecture_Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChapterId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MediaUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "GetChapterById",
+    "RelativePath": "api/Course/ChapterById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Udemy.Presentation.DTOs.LectureDTO",
+        "Type": "Udemy.Presentation.DTOs.ChapterDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

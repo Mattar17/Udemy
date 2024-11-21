@@ -1,8 +1,20 @@
 {
   "Files": [
     {
+      "Id": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\31d224ca-5dfc-48ff-8c14-8ace70e0b7a5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\31d224ca-5dfc-48ff-8c14-8ace70e0b7a5.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\3913cfe7-312d-40b7-92f2-d92b74cde609.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3913cfe7-312d-40b7-92f2-d92b74cde609.jpg"
+    },
+    {
       "Id": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg",
       "PackagePath": "staticwebassets\\uploads\\9c928ea2-a3b4-4553-b1a7-0ac657a00b36.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\wwwroot\\uploads\\b80ea762-589d-4169-99dc-459b1bf3a1f3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b80ea762-589d-4169-99dc-459b1bf3a1f3.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Udemy.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
