@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Presentation.Extensions;
+using Udemy.Presentation.Helpers;
 using Udemy.Repository.Context;
 using Udemy.Repository.Repositories;
 
@@ -13,7 +14,7 @@ namespace Udemy.Presentation
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +39,8 @@ namespace Udemy.Presentation
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);
             builder.Services.EmailServices(builder.Configuration);
+
+            builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
             #endregion
             var app = builder.Build();
 
@@ -115,6 +118,7 @@ namespace Udemy.Presentation
 
 
             app.Run();
+            return Task.CompletedTask;
         }
     }
 }
