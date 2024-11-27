@@ -1,8 +1,8 @@
 ﻿namespace Udemy.Presentation.Helpers
 {
-    public class StripeSettings
+    public static class StripeSettings
     {
-        public string SecretKey { get; set; }
-        public string PublishableKey { get; set; }
+        public static string SecretKey { get; set; }
+        public static string PublishableKey { get; set; }
     }
 }

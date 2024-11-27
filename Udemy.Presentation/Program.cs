@@ -9,6 +9,7 @@ using Udemy.Presentation.Extensions;
 using Udemy.Presentation.Helpers;
 using Udemy.Repository.Context;
 using Udemy.Repository.Repositories;
+using Udemy.Services;
 
 namespace Udemy.Presentation
 {
@@ -35,12 +36,14 @@ namespace Udemy.Presentation
             builder.Services.AddScoped<ICourseRepository,CourseRepository>();
             builder.Services.AddScoped<ICourseChapterRepository,ChapterRepository>();
             builder.Services.AddScoped<ILectureRepository , LectureRepository>();
+            builder.Services.AddScoped<IPaymentService , StripePaymentService>();
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);
             builder.Services.EmailServices(builder.Configuration);
 
-            builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+            var stripeSettings = builder.Configuration.GetSection("Stripe");
+            Stripe.StripeConfiguration.ApiKey = stripeSettings["SecretKey"];
             #endregion
             var app = builder.Build();
 

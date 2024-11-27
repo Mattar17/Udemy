@@ -41,7 +41,6 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Microsoft.IdentityMod
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -53,13 +52,10 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Composition.Ho
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Memory.Data.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Runtime.Caching.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -118,12 +114,7 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win-arm\nati
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Domain.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Repository.dll
 D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Repository.pdb
@@ -162,3 +153,5 @@ D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Udemy.Presentation.st
 D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets\msbuild.Udemy.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 D:\Projects\UdemyClone\Udemy.Presentation\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Projects\UdemyClone\Udemy.Presentation\bin\Debug\net8.0\Stripe.net.dll

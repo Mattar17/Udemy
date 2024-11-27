@@ -53,6 +53,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[47.1.0, )"
             }
           },
           "imports": [
@@ -103,6 +107,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\Projects\\UdemyClone\\Udemy.Domain\\Udemy.Domain.csproj": {
+                "projectPath": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Udemy.Domain.csproj"
+              },
               "D:\\Projects\\UdemyClone\\Udemy.Repository\\Udemy.Repository.csproj": {
                 "projectPath": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Udemy.Repository.csproj"
               }

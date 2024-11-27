@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Udemy.Domain\Udemy.Domain.csproj" />
     <ProjectReference Include="..\Udemy.Repository\Udemy.Repository.csproj" />
   </ItemGroup>
 
