@@ -297,7 +297,23 @@ namespace Udemy.Presentation.Controllers
         }
         #endregion
         #region GetLectureById
+        [HttpGet("get-lecture")]
+        public async Task<ActionResult<LectureDTO>> GetLecture(int lectureId)
+        {
+            var Lecture = await _unitOfWork.LectureRepository.GetByIntId(lectureId);
+            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(Lecture.ChapterId);
 
+            if (User.IsInRole("Student"))
+            {
+                var isEnrolled = _unitOfWork.StudentCourseRepo.IsEnrolled(User.FindFirstValue(ClaimTypes.NameIdentifier) , Chapter.Course_id);
+
+                if (!isEnrolled)
+                    return Unauthorized();
+            }
+
+            var MappedLecture = _mapper.Map<LectureDTO>(Lecture);
+            return Ok(MappedLecture);
+        }
         #endregion
         #region UpdateLecture
         [HttpPut("UpdateLecture")]

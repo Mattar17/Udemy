@@ -339,6 +339,32 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "GetLecture",
+    "RelativePath": "api/Course/get-lecture",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lectureId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.LectureDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
     "Method": "UpdateChapter",
     "RelativePath": "api/Course/UpdateChapter",
     "HttpMethod": "PUT",
@@ -403,7 +429,7 @@
   {
     "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
     "Method": "PurchaseCourse",
-    "RelativePath": "api/Payment/CreatePaymentIntent",
+    "RelativePath": "api/Payment/purchase_course",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

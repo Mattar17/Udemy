@@ -9,5 +9,6 @@ namespace Udemy.Domain.Contracts
 {
     public interface IStudentCourseRepo:IGenericRepository<Student_Course>
     {
+        bool IsEnrolled(string UserId , string CourseId);
     }
 }

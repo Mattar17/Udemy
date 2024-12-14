@@ -617,6 +617,45 @@
         }
       }
     },
+    "/api/Course/get-lecture": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "parameters": [
+          {
+            "name": "lectureId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LectureDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LectureDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LectureDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Course/UpdateLecture": {
       "put": {
         "tags": [
@@ -684,7 +723,7 @@
         }
       }
     },
-    "/api/Payment/CreatePaymentIntent": {
+    "/api/Payment/purchase_course": {
       "post": {
         "tags": [
           "Payment"
