@@ -10,5 +10,6 @@ namespace Udemy.Domain.Contracts
     public interface IPaymentService
     {
         PaymentIntent CreatePaymentIntent(decimal amount,string currency);
+        Task<PaymentIntent> VerifyPayment(string paymentIntentId,string PaymentMethodId);
     }
 }

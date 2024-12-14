@@ -36,6 +36,7 @@ namespace Udemy.Presentation
             builder.Services.AddScoped<ICourseRepository,CourseRepository>();
             builder.Services.AddScoped<ICourseChapterRepository,ChapterRepository>();
             builder.Services.AddScoped<ILectureRepository , LectureRepository>();
+            builder.Services.AddScoped<IStudentCourseRepo , StudentCourseRepo>();
             builder.Services.AddScoped<IPaymentService , StripePaymentService>();
             builder.Services.AddAutoMapper(typeof(Program));
 

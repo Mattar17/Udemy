@@ -4,5 +4,6 @@
     {
         public decimal amount { get; set; }
         public string currency { get; set; }
+        public string CourseId { get; set; }
     }
 }

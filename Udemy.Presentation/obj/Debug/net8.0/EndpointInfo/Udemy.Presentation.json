@@ -904,6 +904,10 @@
           "currency": {
             "type": "string",
             "nullable": true
+          },
+          "courseId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

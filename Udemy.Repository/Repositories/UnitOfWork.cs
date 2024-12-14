@@ -14,13 +14,15 @@ namespace Udemy.Repository.Repositories
 
         public ICourseChapterRepository ChapterRepository { get; }
         public ILectureRepository LectureRepository { get; }
+        public IStudentCourseRepo StudentCourseRepo { get; }
         public ICourseRepository CourseRepository { get; }
-        public UnitOfWork(ApplicationDbContext dbContext,ICourseRepository courseRepository,ICourseChapterRepository chapterRepository,ILectureRepository lectureRepository)
+        public UnitOfWork(ApplicationDbContext dbContext,ICourseRepository courseRepository,ICourseChapterRepository chapterRepository,ILectureRepository lectureRepository,IStudentCourseRepo studentCourseRepo)
         {
             _dbContext = dbContext;
             CourseRepository = courseRepository;
             ChapterRepository = chapterRepository;
             LectureRepository = lectureRepository;
+            StudentCourseRepo = studentCourseRepo;
         }
         public async Task<int>  CompleteAsync()
             => await _dbContext.SaveChangesAsync();

@@ -402,7 +402,7 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
-    "Method": "CreatePaymentIntent",
+    "Method": "PurchaseCourse",
     "RelativePath": "api/Payment/CreatePaymentIntent",
     "HttpMethod": "POST",
     "IsController": true,
