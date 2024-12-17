@@ -191,6 +191,146 @@
         }
       }
     },
+    "/api/Chapter/AddChapter": {
+      "post": {
+        "tags": [
+          "Chapter"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Chapter/ChapterById": {
+      "get": {
+        "tags": [
+          "Chapter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Chapter/UpdateChapter": {
+      "put": {
+        "tags": [
+          "Chapter"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChapterDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Chapter/DeleteChapter": {
+      "delete": {
+        "tags": [
+          "Chapter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Course/Courses": {
       "get": {
         "tags": [
@@ -432,150 +572,10 @@
         }
       }
     },
-    "/api/Course/AddChapter": {
+    "/api/Lecture/AddLecture": {
       "post": {
         "tags": [
-          "Course"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Course/ChapterById": {
-      "get": {
-        "tags": [
-          "Course"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChapterDTO"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Course/UpdateChapter": {
-      "put": {
-        "tags": [
-          "Course"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChapterDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Course/DeleteChapter": {
-      "delete": {
-        "tags": [
-          "Course"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Course/AddLecture": {
-      "post": {
-        "tags": [
-          "Course"
+          "Lecture"
         ],
         "requestBody": {
           "content": {
@@ -617,10 +617,10 @@
         }
       }
     },
-    "/api/Course/get-lecture": {
+    "/api/Lecture/get-lecture": {
       "get": {
         "tags": [
-          "Course"
+          "Lecture"
         ],
         "parameters": [
           {
@@ -656,10 +656,10 @@
         }
       }
     },
-    "/api/Course/UpdateLecture": {
+    "/api/Lecture/UpdateLecture": {
       "put": {
         "tags": [
-          "Course"
+          "Lecture"
         ],
         "requestBody": {
           "content": {
@@ -701,10 +701,10 @@
         }
       }
     },
-    "/api/Course/DeleteLecture": {
+    "/api/Lecture/DeleteLecture": {
       "delete": {
         "tags": [
-          "Course"
+          "Lecture"
         ],
         "parameters": [
           {

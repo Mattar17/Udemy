@@ -105,35 +105,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "GetCourse",
-    "RelativePath": "api/Course/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Udemy.Presentation.DTOs.CourseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "ContainingType": "Udemy.Presentation.Controllers.ChapterController",
     "Method": "AddChapter",
-    "RelativePath": "api/Course/AddChapter",
+    "RelativePath": "api/Chapter/AddChapter",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -157,35 +131,9 @@
     ]
   },
   {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "AddLecture",
-    "RelativePath": "api/Course/AddLecture",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Lecture_Title",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ChapterId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "MediaUrl",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "ContainingType": "Udemy.Presentation.Controllers.ChapterController",
     "Method": "GetChapterById",
-    "RelativePath": "api/Course/ChapterById",
+    "RelativePath": "api/Chapter/ChapterById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -199,6 +147,64 @@
     "ReturnTypes": [
       {
         "Type": "Udemy.Presentation.DTOs.ChapterDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.ChapterController",
+    "Method": "DeleteChapter",
+    "RelativePath": "api/Chapter/DeleteChapter",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.ChapterController",
+    "Method": "UpdateChapter",
+    "RelativePath": "api/Chapter/UpdateChapter",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chapter",
+        "Type": "Udemy.Presentation.DTOs.ChapterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "Method": "GetCourse",
+    "RelativePath": "api/Course/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.CourseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -291,22 +297,6 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "DeleteChapter",
-    "RelativePath": "api/Course/DeleteChapter",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
     "Method": "DeleteCourse",
     "RelativePath": "api/Course/DeleteCourse",
     "HttpMethod": "DELETE",
@@ -317,64 +307,6 @@
         "Name": "Id",
         "Type": "System.String",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "DeleteLecture",
-    "RelativePath": "api/Course/DeleteLecture",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "GetLecture",
-    "RelativePath": "api/Course/get-lecture",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "lectureId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Udemy.Presentation.DTOs.LectureDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
-    "Method": "UpdateChapter",
-    "RelativePath": "api/Course/UpdateChapter",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "chapter",
-        "Type": "Udemy.Presentation.DTOs.ChapterDTO",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -401,9 +333,77 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Udemy.Presentation.Controllers.CourseController",
+    "ContainingType": "Udemy.Presentation.Controllers.LectureController",
+    "Method": "AddLecture",
+    "RelativePath": "api/Lecture/AddLecture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Lecture_Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChapterId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MediaUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.LectureController",
+    "Method": "DeleteLecture",
+    "RelativePath": "api/Lecture/DeleteLecture",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.LectureController",
+    "Method": "GetLecture",
+    "RelativePath": "api/Lecture/get-lecture",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lectureId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.LectureDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.LectureController",
     "Method": "UpdateLecture",
-    "RelativePath": "api/Course/UpdateLecture",
+    "RelativePath": "api/Lecture/UpdateLecture",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
