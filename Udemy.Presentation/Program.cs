@@ -1,5 +1,6 @@
 
 using AutoMapper;
+using CloudinaryDotNet;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -45,6 +46,10 @@ namespace Udemy.Presentation
 
             var stripeSettings = builder.Configuration.GetSection("Stripe");
             Stripe.StripeConfiguration.ApiKey = stripeSettings["SecretKey"];
+
+            var cloudinary = new Cloudinary(builder.Configuration["CLOUDINARY_URL"]);
+            cloudinary.Api.Secure = true;
+
             #endregion
             var app = builder.Build();
 
