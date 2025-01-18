@@ -16,11 +16,13 @@ namespace Udemy.Presentation.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly FileUpload _fileUpload;
 
-        public LectureController(IUnitOfWork unitOfWork,IMapper mapper)
+        public LectureController(IUnitOfWork unitOfWork,IMapper mapper,FileUpload fileUpload)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _fileUpload = fileUpload;
         }
 
 
@@ -28,7 +30,7 @@ namespace Udemy.Presentation.Controllers
         #region Add Lecture to a Chapter
         [HttpPost("AddLecture")]
         [Authorize(Roles = "Admin,Instructor")]
-        public async Task<ActionResult> AddLecture([FromForm] LectureCreationDTO lecture)
+        public async Task<ActionResult> AddLecture([FromForm]LectureCreationDTO lecture)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Model isn't Valid");
@@ -44,7 +46,7 @@ namespace Udemy.Presentation.Controllers
             if (Course.InstructorId != userId)
                 return Unauthorized("You Can't Add to this course");
 
-            var MediaUrl = await FileUpload.UploadFileAsync(lecture.MediaUrl);
+            var MediaUrl = _fileUpload.UploadVideo(lecture.MediaUrl);
 
             var MappedLecture = _mapper.Map<ChapterLecture>(lecture);
             MappedLecture.MediaUrl = MediaUrl;
@@ -100,7 +102,7 @@ namespace Udemy.Presentation.Controllers
 
             if (lecture.MediaUrl is not null)
             {
-                var MediaUrl = await FileUpload.UploadFileAsync(lecture.MediaUrl);
+                var MediaUrl = _fileUpload.UploadVideo(lecture.MediaUrl);
                 MappedLecture.MediaUrl = MediaUrl;
             }
 

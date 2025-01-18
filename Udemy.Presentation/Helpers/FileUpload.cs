@@ -1,37 +1,62 @@
 ﻿
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+
 namespace Udemy.Presentation.Helpers
 {
+    
     public class FileUpload
     {
-        private static readonly string _baseUploadPath = "wwwroot/uploads/";
+        private readonly Cloudinary _cloudinary;
 
-        public FileUpload()
+        public FileUpload(Cloudinary cloudinary)
         {
-            if (!Directory.Exists(_baseUploadPath))
+            _cloudinary = cloudinary;
+        }
+        public string UploadImage(IFormFile file)
+        {
+            if (file is null || file.Length == 0)
+                return "";
+
+            try
             {
-                Directory.CreateDirectory(_baseUploadPath);
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(file.FileName , file.OpenReadStream())
+                };
+
+                var uploadResult = _cloudinary.Upload(uploadParams);
+
+                return uploadResult.SecureUrl.ToString();
             }
 
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
-        public static async Task<string> UploadFileAsync(IFormFile file)
+        public string UploadVideo(IFormFile file)
         {
-            if (file == null || file.Length == 0)
+            if (file is null || file.Length == 0)
+                return "";
+
+            try
             {
-                return "File cannot be null or empty";
+                var uploadParams = new VideoUploadParams()
+                {
+                    File = new FileDescription(file.FileName , file.OpenReadStream())
+                };
+
+                var uploadResult = _cloudinary.Upload(uploadParams);
+
+                return uploadResult.SecureUrl.ToString();
             }
 
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            var filePath  = Path.Combine(_baseUploadPath, fileName);
-
-            using (var stream = new FileStream(filePath , FileMode.Create))
+            catch (Exception ex)
             {
-                await file.CopyToAsync(stream);
+                return ex.Message;
             }
-
-            var fileUrl = $"http://localhost:7100/uploads/{fileName}";
-            return fileUrl;
-
         }
     }
 }

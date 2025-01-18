@@ -20,11 +20,13 @@ namespace Udemy.Presentation.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly FileUpload _fileUpload;
 
-        public CourseController(IUnitOfWork unitOfWork , IMapper mapper)
+        public CourseController(IUnitOfWork unitOfWork , IMapper mapper,FileUpload fileUpload)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _fileUpload = fileUpload;
         }
 
         #region Get All Courses + GetCourse By id
@@ -68,7 +70,7 @@ namespace Udemy.Presentation.Controllers
                 return BadRequest();
 
             course.Level = courseLevel.ToString();
-            var PreviewPicUrl = await FileUpload.UploadFileAsync(course.PreviewPicture);
+            var PreviewPicUrl = _fileUpload.UploadImage(course.PreviewPicture);
 
             var newCourse = _mapper.Map<Course>(course);
             newCourse.InstructorId = User.FindFirstValue(ClaimTypes.NameIdentifier);

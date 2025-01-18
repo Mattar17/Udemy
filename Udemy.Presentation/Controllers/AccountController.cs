@@ -18,12 +18,14 @@ namespace Udemy.Presentation.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly IEmailService _emailService;
+        private readonly FileUpload _fileUpload;
 
-        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService , IEmailService emailService)
+        public AccountController(UserManager<ApplicationUser> userManager , ITokenService tokenService , IEmailService emailService,FileUpload fileUpload)
         {
             _userManager = userManager;
             _tokenService = tokenService;
             _emailService = emailService;
+            _fileUpload = fileUpload;
         }
         [HttpPost("Register")]
         public async Task<ActionResult<RegisterDTO>> Register(RegisterDTO model)
@@ -127,7 +129,7 @@ namespace Udemy.Presentation.Controllers
                 return Unauthorized();
 
             var user = await _userManager.FindByIdAsync(UserId);
-            var PictureURL = await FileUpload.UploadFileAsync(file);
+            var PictureURL = _fileUpload.UploadImage(file);
 
             if (user is null)
             {

@@ -39,6 +39,7 @@ namespace Udemy.Presentation
             builder.Services.AddScoped<ILectureRepository , LectureRepository>();
             builder.Services.AddScoped<IStudentCourseRepo , StudentCourseRepo>();
             builder.Services.AddScoped<IPaymentService , StripePaymentService>();
+            builder.Services.AddTransient<FileUpload>();
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddJWTAuthenticationSechma(builder.Configuration);
@@ -47,8 +48,20 @@ namespace Udemy.Presentation
             var stripeSettings = builder.Configuration.GetSection("Stripe");
             Stripe.StripeConfiguration.ApiKey = stripeSettings["SecretKey"];
 
-            var cloudinary = new Cloudinary(builder.Configuration["CLOUDINARY_URL"]);
-            cloudinary.Api.Secure = true;
+            #region Cloudinary Configuration
+
+            var cloudinaryConfig = builder.Configuration.GetSection("Cloudinary");
+            Account account = new Account(
+                cloudinaryConfig["CloudName"] ,
+                cloudinaryConfig["ApiKey"] ,
+                cloudinaryConfig["ApiSecret"]
+                );
+
+            Cloudinary cloudinary = new Cloudinary( account );
+            builder.Services.AddSingleton(cloudinary);
+            
+
+            #endregion
 
             #endregion
             var app = builder.Build();
