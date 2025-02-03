@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Stripe;
 using System.Security.Claims;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
@@ -9,55 +10,72 @@ using Udemy.Services;
 
 namespace Udemy.Presentation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/payment")]
     [ApiController]
     [Authorize]
     public class PaymentController : ControllerBase
     {
-        private readonly IPaymentService _stripePaymentService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public PaymentController(IPaymentService stripePaymentService,IUnitOfWork unitOfWork)
+        public PaymentController(IPaymentService stripePaymentService , IUnitOfWork unitOfWork)
         {
-            _stripePaymentService = stripePaymentService;
             _unitOfWork = unitOfWork;
         }
 
-        [HttpPost("purchase_course")]
-        public async Task<ActionResult> PurchaseCourse(PaymentRequest request)
+        [HttpPost("{courseId}/create_payment_intent")]
+        public async Task<ActionResult> CreatePyamentIntent(string courseId , string currency)
         {
-           try
-           {
-                var paymentIntent = _stripePaymentService.CreatePaymentIntent(request.amount , request.currency);
-                var confirmedIntent = await _stripePaymentService.VerifyPayment(paymentIntent.Id , "pm_card_visa");
-               
-                if (confirmedIntent.Status == "succeeded")
-                {
-                    
-                    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            try
+            {
+                var course = await _unitOfWork.CourseRepository.GetById(courseId);
 
-                    var studentCourse = new Student_Course
+                var options = new PaymentIntentCreateOptions
+                {
+                    Amount = 2000 , // Amount in cents
+                    Currency = "usd" ,
+                    PaymentMethodTypes = new List<string> { "card" } ,
+                    Metadata = new Dictionary<string , string>
                     {
-                        UserId = userId ,
-                        CourseId = request.CourseId
-                    };
+                         { "course_id", courseId }, 
+                         { "student_id", User.FindFirstValue(ClaimTypes.NameIdentifier) } 
+                    }
+                };
 
-                    await _unitOfWork.StudentCourseRepo.Add(studentCourse);
-                    await _unitOfWork.CompleteAsync();
+                var service = new PaymentIntentService();
+                var paymentIntent = service.Create(options);
 
-                    return Ok("Payment succeeded and student enrolled");
-                }
-                else
-                {
-                    return BadRequest($"Payment failed with status: {confirmedIntent.Status}");
-                }
+                return Ok(paymentIntent.Id);
             }
             catch (Exception ex)
             {
-               
+
                 return StatusCode(500 , $"An error occurred: {ex.Message}");
             }
         }
+
+        [HttpPost("confirm_payment_intent")]
+        public async Task<ActionResult> ConfirmPaymentIntent(string PaymentIntentId)
+        {
+
+            try
+            {
+                var options = new PaymentIntentConfirmOptions()
+                {
+                    PaymentMethod = "pm_card_visa"
+                };
+
+                var service = new PaymentIntentService();
+                service.Confirm(PaymentIntentId , options);
+
+                return Ok("intent confirmed");
+            }
+
+            catch (Exception ex)
+            {
+                return StatusCode(500 , $"An error occurred: {ex.Message}");
+            }
+        }
+
 
     }
 }

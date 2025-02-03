@@ -3,6 +3,7 @@ using AutoMapper;
 using CloudinaryDotNet;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;

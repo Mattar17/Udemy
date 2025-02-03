@@ -428,18 +428,49 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
-    "Method": "PurchaseCourse",
-    "RelativePath": "api/Payment/purchase_course",
+    "Method": "CreatePyamentIntent",
+    "RelativePath": "api/payment/{courseId}/create_payment_intent",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Udemy.Presentation.DTOs.PaymentRequest",
+        "Name": "courseId",
+        "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
+    "Method": "ConfirmPaymentIntent",
+    "RelativePath": "api/payment/confirm_payment_intent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PaymentIntentId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
+    "Method": "StripeWebhook",
+    "RelativePath": "api/payment/stripe/webhook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
