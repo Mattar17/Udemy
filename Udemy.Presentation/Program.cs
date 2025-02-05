@@ -34,12 +34,9 @@ namespace Udemy.Presentation
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
-            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
-            builder.Services.AddScoped<ICourseRepository,CourseRepository>();
-            builder.Services.AddScoped<ICourseChapterRepository,ChapterRepository>();
-            builder.Services.AddScoped<ILectureRepository , LectureRepository>();
-            builder.Services.AddScoped<IStudentCourseRepo , StudentCourseRepo>();
-            builder.Services.AddScoped<IPaymentService , StripePaymentService>();
+
+            builder.Services.ObjectLifeTime();
+
             builder.Services.AddTransient<FileUpload>();
             builder.Services.AddAutoMapper(typeof(Program));
 

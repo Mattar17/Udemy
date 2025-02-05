@@ -35,7 +35,7 @@ namespace Udemy.Presentation.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Model isn't Valid");
 
-            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+            var Chapter = await _unitOfWork.ChapterRepository.GetById(lecture.ChapterId);
 
             if (Chapter is null)
                 return NotFound();
@@ -63,8 +63,8 @@ namespace Udemy.Presentation.Controllers
         [HttpGet("get-lecture")]
         public async Task<ActionResult<LectureDTO>> GetLecture(int lectureId)
         {
-            var Lecture = await _unitOfWork.LectureRepository.GetByIntId(lectureId);
-            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(Lecture.ChapterId);
+            var Lecture = await _unitOfWork.LectureRepository.GetById(lectureId);
+            var Chapter = await _unitOfWork.ChapterRepository.GetById(Lecture.ChapterId);
 
             if (User.IsInRole("Student"))
             {
@@ -86,7 +86,7 @@ namespace Udemy.Presentation.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Model isn't Valid");
 
-            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+            var Chapter = await _unitOfWork.ChapterRepository.GetById(lecture.ChapterId);
 
             if (Chapter is null)
                 return NotFound();
@@ -120,11 +120,11 @@ namespace Udemy.Presentation.Controllers
         [Authorize(Roles = "Admin,Instructor")]
         public async Task<ActionResult> DeleteLecture(int id)
         {
-            var lecture = await _unitOfWork.LectureRepository.GetByIntId(id);
+            var lecture = await _unitOfWork.LectureRepository.GetById(id);
             if (lecture == null)
                 return NotFound();
 
-            var Chapter = await _unitOfWork.ChapterRepository.GetByIntId(lecture.ChapterId);
+            var Chapter = await _unitOfWork.ChapterRepository.GetById(lecture.ChapterId);
 
             if (Chapter is null)
                 return NotFound();

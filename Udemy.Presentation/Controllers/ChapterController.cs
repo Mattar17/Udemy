@@ -82,7 +82,7 @@ namespace Udemy.Presentation.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var reqChapter = await _unitOfWork.ChapterRepository.GetByIntId(chapter.Id);
+            var reqChapter = await _unitOfWork.ChapterRepository.GetById(chapter.Id);
 
             if (chapter is null)
                 return NotFound();
@@ -112,7 +112,7 @@ namespace Udemy.Presentation.Controllers
         public async Task<ActionResult> DeleteChapter(int id)
         {
 
-            var chapter = await _unitOfWork.ChapterRepository.GetByIntId(id);
+            var chapter = await _unitOfWork.ChapterRepository.GetById(id);
 
             if (chapter is null)
                 return NotFound();

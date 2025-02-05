@@ -464,13 +464,60 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Udemy.Presentation.Controllers.PaymentController",
-    "Method": "StripeWebhook",
-    "RelativePath": "api/payment/stripe/webhook",
+    "ContainingType": "Udemy.Presentation.Controllers.ReviewsController",
+    "Method": "CreateReview",
+    "RelativePath": "api/reviews/{course_id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
+    "Parameters": [
+      {
+        "Name": "course_id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ReviewContent",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.ReviewDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.ReviewsController",
+    "Method": "CourseReviews",
+    "RelativePath": "api/reviews/course_review/{course_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "course_id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Udemy.Presentation.DTOs.ReviewDTO, Udemy.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

@@ -12,17 +12,19 @@ namespace Udemy.Repository.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
 
+        public IReviewRepository ReviewRepository { get; }
         public ICourseChapterRepository ChapterRepository { get; }
         public ILectureRepository LectureRepository { get; }
         public IStudentCourseRepo StudentCourseRepo { get; }
         public ICourseRepository CourseRepository { get; }
-        public UnitOfWork(ApplicationDbContext dbContext,ICourseRepository courseRepository,ICourseChapterRepository chapterRepository,ILectureRepository lectureRepository,IStudentCourseRepo studentCourseRepo)
+        public UnitOfWork(ApplicationDbContext dbContext,ICourseRepository courseRepository,ICourseChapterRepository chapterRepository,ILectureRepository lectureRepository,IStudentCourseRepo studentCourseRepo,IReviewRepository reviewRepository)
         {
             _dbContext = dbContext;
             CourseRepository = courseRepository;
             ChapterRepository = chapterRepository;
             LectureRepository = lectureRepository;
             StudentCourseRepo = studentCourseRepo;
+            ReviewRepository = reviewRepository;
         }
         public async Task<int>  CompleteAsync()
             => await _dbContext.SaveChangesAsync();

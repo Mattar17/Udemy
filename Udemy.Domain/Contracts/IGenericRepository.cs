@@ -11,7 +11,7 @@ namespace Udemy.Domain.Contracts
         Task<IEnumerable<T>> GetAllAsync(ISpecificationBase<T> specification);
         Task<T> GetByIdAsync (ISpecificationBase<T> specification);
         Task<T> GetById(string id);
-        Task<T> GetByIntId(int id);
+        Task<T> GetById(int id);
         Task Add(T item);
         void Update(T item);
         void Delete(T item);

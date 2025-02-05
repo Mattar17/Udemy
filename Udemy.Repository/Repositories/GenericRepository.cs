@@ -43,7 +43,7 @@ namespace Udemy.Repository.Repositories
             return SpecificationEvaluator.GetQuery(_dbContext.Set<T>() , specification);
         }
 
-        public async Task<T> GetByIntId(int id)
+        public async Task<T> GetById(int id)
             => await _dbContext.Set<T>().FindAsync(id);
     }
 }
