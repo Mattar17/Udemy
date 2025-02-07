@@ -17,6 +17,9 @@ namespace Udemy.Repository.Configurations
                 .WithMany(c => c.CourseReviews)
                 .HasForeignKey(cr => cr.CourseId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(r => r.Id)
+                .ValueGeneratedOnAdd();
         }
     }
 }

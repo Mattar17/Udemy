@@ -38,6 +38,10 @@ namespace Udemy.Presentation.Controllers
             };
 
             await _unitOfWork.ReviewRepository.Add(review);
+            var result = await _unitOfWork.CompleteAsync();
+
+            if (result == 0)
+                return Ok("Error happened.. Try again!");
 
             var mappedReview = _mapper.Map<ReviewDTO>(review);
 
