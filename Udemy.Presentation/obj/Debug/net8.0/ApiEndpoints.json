@@ -465,6 +465,22 @@
   },
   {
     "ContainingType": "Udemy.Presentation.Controllers.ReviewsController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/reviews",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.ReviewsController",
     "Method": "CreateReview",
     "RelativePath": "api/reviews/{course_id}",
     "HttpMethod": "POST",
@@ -511,6 +527,42 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Udemy.Presentation.DTOs.ReviewDTO, Udemy.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Udemy.Presentation.Controllers.ReviewsController",
+    "Method": "UpdateReview",
+    "RelativePath": "api/reviews/update_review/${review_id}/${course_name}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newReview",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "course_name",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Udemy.Presentation.DTOs.ReviewDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

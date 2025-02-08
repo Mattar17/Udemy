@@ -9,6 +9,5 @@ namespace Udemy.Presentation.DTOs
         public bool IsApproved { get; set; }
         public ApplicationUser User { get; set; }
         public string UserId { get; set; }
-        
     }
 }

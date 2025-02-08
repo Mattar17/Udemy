@@ -64,5 +64,40 @@ namespace Udemy.Presentation.Controllers
             return Ok(MappedReviews);
         }
 
+        [HttpPut("update_review/${review_id}/${course_name}")]
+        public async Task<ActionResult<ReviewDTO>> UpdateReview(int review_id,[FromForm] string newReview)
+        {
+            var review = await _unitOfWork.ReviewRepository.GetById(review_id);
+
+            if ( review is null)
+            {
+                return BadRequest("Review is deleted or doesn't exist"); 
+            }
+
+            review.Review_Content = newReview;
+
+            _unitOfWork.ReviewRepository.Update(review);
+            await _unitOfWork.CompleteAsync();
+
+            var mapped_review = _mapper.Map<ReviewDTO>(review);
+            return Ok(mapped_review);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteReview(int id)
+        {
+            var review = await _unitOfWork.ReviewRepository.GetById(id);
+
+            if (review is null)
+            {
+                return BadRequest("Review is deleted or doesn't exist");
+            }
+
+            _unitOfWork.ReviewRepository.Delete(review);
+            await _unitOfWork.CompleteAsync();
+
+            return Ok("review deleted :)");
+        }
+
     }
 }
