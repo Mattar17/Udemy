@@ -6,6 +6,7 @@ using System.Security.Claims;
 using Udemy.Domain.Contracts;
 using Udemy.Domain.Models;
 using Udemy.Presentation.DTOs;
+using Udemy.Repository.Repositories;
 using Udemy.Repository.Specification;
 
 namespace Udemy.Presentation.Controllers
@@ -28,24 +29,37 @@ namespace Udemy.Presentation.Controllers
         [HttpPost("{course_id}")]
         public async Task<ActionResult<ReviewDTO>> CreateReview(string course_id , [FromForm]string ReviewContent)
         {
-            var review = new CourseReview()
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var isEnrolled = _unitOfWork.StudentCourseRepo.IsEnrolled(userId , course_id);
+
+            if (!isEnrolled)
             {
-                Review_Content = ReviewContent ,
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-                CourseId = course_id ,
-                CreationDate = DateTime.Now,
-                IsApproved = false
-            };
+                return Unauthorized();
+            }
 
-            await _unitOfWork.ReviewRepository.Add(review);
-            var result = await _unitOfWork.CompleteAsync();
+            else
+            {
+                var review = new CourseReview()
+                {
+                    Review_Content = ReviewContent ,
+                    UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) ,
+                    CourseId = course_id ,
+                    CreationDate = DateTime.Now ,
+                    IsApproved = false
+                };
 
-            if (result == 0)
-                return Ok("Error happened.. Try again!");
+                await _unitOfWork.ReviewRepository.Add(review);
+                var result = await _unitOfWork.CompleteAsync();
 
-            var mappedReview = _mapper.Map<ReviewDTO>(review);
+                if (result == 0)
+                    return Ok("Error happened.. Try again!");
 
-            return Ok(mappedReview);
+                var mappedReview = _mapper.Map<ReviewDTO>(review);
+
+                return Ok(mappedReview);
+            }
 
         }
 
@@ -64,10 +78,14 @@ namespace Udemy.Presentation.Controllers
             return Ok(MappedReviews);
         }
 
-        [HttpPut("update_review/${review_id}/${course_name}")]
+        [HttpPut("update_review/${review_id}")]
         public async Task<ActionResult<ReviewDTO>> UpdateReview(int review_id,[FromForm] string newReview)
         {
             var review = await _unitOfWork.ReviewRepository.GetById(review_id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (review.UserId != userId)
+                return Unauthorized();
 
             if ( review is null)
             {
@@ -87,6 +105,10 @@ namespace Udemy.Presentation.Controllers
         public async Task<ActionResult> DeleteReview(int id)
         {
             var review = await _unitOfWork.ReviewRepository.GetById(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (review.UserId != userId)
+                return Unauthorized();
 
             if (review is null)
             {

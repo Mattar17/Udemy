@@ -18,7 +18,7 @@ namespace Udemy.Repository.Repositories
             this.dbContext = dbContext;
         }
 
-        public bool IsEnrolled(string UserId , string CourseId)
+        public  bool IsEnrolled(string UserId , string CourseId)
         {
             var Result = dbContext.Student_Courses.Where(sc => sc.UserId == UserId && sc.CourseId == CourseId);
 
