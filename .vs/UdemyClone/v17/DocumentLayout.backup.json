@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\UdemyClone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|d:\\projects\\udemyclone\\udemy.presentation\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F49A85B0-5BCB-4528-B222-7EA6013F9B7F}|Udemy.Presentation\\Udemy.Presentation.csproj|solutionrelative:udemy.presentation\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|d:\\projects\\udemyclone\\udemy.repository\\repositories\\studentcourserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF36039A-A201-4F25-9430-1FDBB387486C}|Udemy.Repository\\Udemy.Repository.csproj|solutionrelative:udemy.repository\\repositories\\studentcourserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|d:\\projects\\udemyclone\\udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA9768D-6D8B-4B57-91D2-D2927E3810A2}|Udemy.Domain\\Udemy.Domain.csproj|solutionrelative:udemy.domain\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +22,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StudentCourseRepo.cs",
+              "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Repositories\\StudentCourseRepo.cs",
+              "RelativeDocumentMoniker": "Udemy.Repository\\Repositories\\StudentCourseRepo.cs",
+              "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Repository\\Repositories\\StudentCourseRepo.cs",
+              "RelativeToolTip": "Udemy.Repository\\Repositories\\StudentCourseRepo.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T00:00:58.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ReviewsController.cs",
               "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\ReviewsController.cs",
               "RelativeDocumentMoniker": "Udemy.Presentation\\Controllers\\ReviewsController.cs",
               "ToolTip": "D:\\Projects\\UdemyClone\\Udemy.Presentation\\Controllers\\ReviewsController.cs",
               "RelativeToolTip": "Udemy.Presentation\\Controllers\\ReviewsController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAA1wHcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T23:24:16.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\Projects\\UdemyClone\\Udemy.Domain\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Udemy.Domain\\Models\\ApplicationUser.cs",
@@ -45,10 +66,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T23:20:21.898Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
